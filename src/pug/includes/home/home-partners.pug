@@ -1,0 +1,33 @@
+-
+  var slides = [
+    {link: 'https://leleka-surgery.com.ua/', img: 'Leleka logo.png', text: 'Медичний центр "Лелека"'},
+    {link: 'https://medcenter.lviv.ua/', img: 'ST Paraskeva logo.png', text: 'Медичний центр "Святої Параскеви"'},
+    {link: 'https://zablotskyy.ua/', img: 'Zabolotsky clinic logo.png', text: 'Клініка Заблоцького'},
+    {link: 'https://mriydiy.in.ua/', img: 'Mriy Diy logo.png', text: 'Мрій Дій'},
+    {link: 'https://ucu.edu.ua/', img: 'UKU logo.png', text: 'УКУ'},
+    {link: 'https://lvivrada.gov.ua/', img: 'Lviv parlament logo.png', text: 'Львівська міська рада'},
+  ]
+
+.home-partners.g_side_padding
+  .home-partners__content
+    +title-decor()
+    .home-partners__top
+      .home-partners__title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1 Партнери та клієнти
+      .home-partners__nav
+        button(type="button" data-home-partners-slider-prev).nav-arrow
+          <svg preserveAspectRatio="xMinYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+          </svg>
+        button(type="button" data-home-partners-slider-next).nav-arrow
+          <svg preserveAspectRatio="xMaxYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+          </svg>
+    .swiper-container(data-home-partners-slider)
+      .swiper-wrapper
+        each val in slides
+          a(href=`${val.link}`).swiper-slide
+            .home-partners__img
+              img(src=`/assets/images/home/home-partners/${val.img}`, alt=`${val.text}`)
+            div #{val.text}

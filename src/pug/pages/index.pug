@@ -1,0 +1,96 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'project'
+    var id_page = 'home'
+    var class_page = 'home '
+    var firstScreenSlides = [
+      './assets/images/home/1.jpg',
+      './assets/images/home/2.jpg',
+      './assets/images/home/3.jpg'
+    ]
+
+block meta
+  title= 'TVD'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+block content
+  .home-front-screen
+    .home-front-screen__content
+      .home-front-screen__left
+        .home-front-screen__decor
+          <svg width="41" height="10" viewBox="0 0 41 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M36.5 0.5C38.9853 0.5 41 2.51472 41 5C41 7.48528 38.9853 9.5 36.5 9.5C35.4354 9.5 34.4573 9.13028 33.6869 8.51223C32.1204 7.2554 30.5084 5.5 28.5 5.5C26.4916 5.5 24.8796 7.2554 23.3131 8.51223C22.5427 9.13028 21.5646 9.5 20.5 9.5C19.4354 9.5 18.4573 9.13028 17.6869 8.51223C16.1204 7.2554 14.5084 5.5 12.5 5.5C10.4916 5.5 8.87961 7.2554 7.31306 8.51223C6.54272 9.13028 5.56462 9.5 4.5 9.5C2.01472 9.5 0 7.48528 0 5C0 2.51472 2.01472 0.5 4.5 0.5C5.56462 0.5 6.54271 0.869723 7.31306 1.48777C8.87961 2.7446 10.4916 4.5 12.5 4.5C14.5084 4.5 16.1204 2.7446 17.6869 1.48777C18.4573 0.869723 19.4354 0.5 20.5 0.5C21.5646 0.5 22.5427 0.869723 23.3131 1.48777C24.8796 2.7446 26.4916 4.5 28.5 4.5C30.5084 4.5 32.1204 2.7446 33.6869 1.48777C34.4573 0.869723 35.4354 0.5 36.5 0.5Z" fill="#0A0F13"/>
+          </svg>
+          .home-front-screen__decor-line
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5794 5.41952C17.6959 6.53601 17.6959 8.3462 16.5794 9.46269C16.1191 9.92297 15.5409 10.1935 14.9421 10.2742C13.6023 10.4548 11.9761 10.3598 11.0201 11.3157C10.0642 12.2717 10.1592 13.8979 9.9785 15.2378C9.89774 15.8366 9.62721 16.4149 9.16691 16.8752C8.05042 17.9916 6.24024 17.9916 5.12375 16.8752C4.00726 15.7587 4.00726 13.9485 5.12375 12.832C5.58405 12.3717 6.16225 12.1012 6.76115 12.0204C8.10096 11.8397 9.72722 11.9347 10.6832 10.9788C11.6391 10.0228 11.5441 8.3966 11.7247 7.05679C11.8054 6.45795 12.0759 5.8798 12.5362 5.41952C13.6527 4.30304 15.4629 4.30304 16.5794 5.41952Z" fill="#0A0F13"/>
+            <path d="M16.5794 16.8752C15.4629 17.9916 13.6527 17.9916 12.5362 16.8752C12.0759 16.4149 11.8054 15.8367 11.7247 15.2379C11.5441 13.8981 11.6391 12.2719 10.6832 11.3159C9.72722 10.3599 8.10096 10.455 6.76115 10.2743C6.16225 10.1935 5.58405 9.92298 5.12375 9.46269C4.00726 8.3462 4.00726 6.53601 5.12375 5.41952C6.24024 4.30304 8.05042 4.30304 9.16691 5.41952C9.62721 5.87982 9.89774 6.45803 9.9785 7.05692C10.1592 8.39673 10.0642 10.023 11.0201 10.979C11.9761 11.9349 13.6023 11.8398 14.9421 12.0205C15.5409 12.1012 16.1191 12.3717 16.5794 12.832C17.6959 13.9485 17.6959 15.7587 16.5794 16.8752Z" fill="#0A0F13"/>
+          </svg>
+
+        .home-front-screen__left-bg
+          img(src="./assets/images/home/fs-bg.jpg", alt="", srcset="")
+        .home-front-screen__left-title.text-style-1920-h-2 Гідний Європи, серцем в Україні ♡
+        .home-front-screen__left-round-images
+          .home-front-screen__left-round-image-wrapper
+            .home-front-screen__left-round-image
+              img(src="./assets/images/home/left-img1.jpg", alt="", srcset="")
+          .home-front-screen__left-round-image-wrapper
+            .home-front-screen__left-round-image
+              img(src="./assets/images/home/left-img2.jpg", alt="", srcset="")
+        .home-front-screen__list
+          .home-front-screen__list-item
+            .home-front-screen__list-item-title Років на ринку 
+            .home-front-screen__list-item-value 31
+          .home-front-screen__list-item
+            .home-front-screen__list-item-title Реалізованих проєктів
+            .home-front-screen__list-item-value 100+
+          .home-front-screen__list-item
+            .home-front-screen__list-item-title Задоволених клієнтів
+            .home-front-screen__list-item-value 600+
+          .home-front-screen__list-item
+            .home-front-screen__list-item-title Відзнак
+            .home-front-screen__list-item-value 200+
+          .home-front-screen__list-item
+            .home-front-screen__list-item-title Проданих квартир
+            .home-front-screen__list-item-value ≈1000
+
+
+        .home-front-screen__dates
+          div Since
+          .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1 1994
+          <svg preserveAspectRatio="xMaxYMid slice" width="206" height="38" viewBox="0 0 206 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M172 16.0917V21.9084H0V16.0917H172Z" fill="#0A0F13"/>
+            <path d="M206 19L187.309 38L183.187 33.9157L195 21.9071H172V16.0929H195L183.187 4.08427L187.309 0L206 19Z" fill="#0A0F13"/>
+          </svg>
+          .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1 2025
+      .home-front-screen__right
+        .home-front-screen__right-content
+          .home-front-screen__lines
+            each slide, index in firstScreenSlides
+              .home-front-screen__slider-line(data-front-screen-slider-line=index)
+                .home-front-screen__slider-line-inner
+          .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1.color-white Змінюємо уявлення про будівництво
+        .swiper-container(data-front-screen-slider)
+          .swiper-wrapper
+            each slide, index in firstScreenSlides
+              .swiper-slide
+                img(src=slide, alt="", srcset="")
+  include ../includes/home/home-about.pug
+  include ../includes/home/home-projects.pug
+  include ../includes/home/home-services.pug
+  include ../includes/home/home-partners.pug
+  include ../includes/home/home-news.pug
+  include ../includes/contact-screen.pug
+  include ../includes/form-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

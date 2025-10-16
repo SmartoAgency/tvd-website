@@ -1,0 +1,138 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Детальний проект'
+    var id_page = 'id-page-single-project'
+    var class_page = 'class-page-single-project'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Проекти',
+        link: '/projects'
+      }
+    ]
+    var labels = [
+      'Підготовчі',
+      'Земляні',
+      'Бетонні',
+      'Мурувальні',
+      'Монтажні',
+      'Покрівельні',
+      'Оздоблювальні',
+      'Благоустрій',
+      'Інженерні мережі',
+      'Пусконалагоджувальні',
+      'Здача в експлуатацію',
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/single-project.bundle.js')
+block content
+  .single-project-front-screen.g_side_padding
+    .single-project-front-screen__content
+      include ../includes/breadcrumbs.pug
+      +title-decor-inner-pages()
+      .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1  Приватна школа МрійДій 
+  .single-project-screen2
+    .single-project-screen2__content
+      .single-project-screen2__title
+        .single-project-front-screen__title-wrapper
+          .single-project-front-screen__title.text-style-1920-h-2.color-white Визначний обʼєкт
+          .single-project-front-screen__title-decor1
+          .single-project-front-screen__title-decor2
+          .single-project-front-screen__title-decor3
+          .single-project-front-screen__title-decor4
+          .single-project-front-screen__title-decor5
+      .single-project-screen2__info
+        .single-project-screen2__info-group
+          img(src="./assets/images/single-project/plannings.svg", alt="", srcset="")
+          .text-style-1920-buttons Вид проєкту:
+          .text-style-1920-h-3 Навчальний
+        .single-project-screen2__info-group
+          img(src="./assets/images/single-project/pin.svg", alt="", srcset="")
+          .text-style-1920-buttons Адреса:
+          .text-style-1920-h-3 Львів, вул. Угорська, 12Д
+        .single-project-screen2__info-group
+          img(src="./assets/images/single-project/calendar.svg", alt="", srcset="")
+          .text-style-1920-buttons Рік будівництва:
+          .text-style-1920-h-3 2019-2021
+        .single-project-screen2__info-group
+          img(src="./assets/images/single-project/area.svg", alt="", srcset="")
+          .text-style-1920-buttons Площа:
+          .text-style-1920-h-3 1500 м²
+      .single-project-screen2__labels
+        .text-style-1920-buttons Види проведених робіт:
+        each val in labels
+          span.single-project-label #{val}
+  .single-project-slider
+    .single-project-slider.swiper-container(data-single-projects-slider)
+      .single-project-slider__counter
+        .color-black(data-single-projects-slider-current) 01
+        .color-gray-dark /
+        .color-gray-dark(data-single-projects-slider-all) 07
+      .single-project-slider__nav
+        button(type="button" data-single-projects-slider-prev).single-project-slider__button
+          <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+          </svg>
+        button(type="button" data-single-projects-slider-next).single-project-slider__button
+          <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+          </svg>
+      .swiper-wrapper
+        each val in [1,2,3,4,5,6,7,8,9]
+          .swiper-slide
+            img(src="./assets/images/single-project/mock-project.jpg", alt="", srcset="")
+  .single-project-description.g_side_padding
+    .single-project-description__content
+      .single-project-description__title
+        .text-style-1920-h-2 Технології мрієбудування допомагають  школярам 1-11 класу перетворювати мрію у ціль, окреслювати плани та кроки для її досягнення. 
+      .single-project-description__description
+        p Наприклад, мрія п’ятикласника стати відомим ютубером, сформульована під кутом зору того, що учень може зробити для досягнення цієї мрії у школі, перетворюється на чудовий мотиваційний інструмент для навчання. Урок мрієбудування відбувається на початку кожного місяця в рамках формаційного курсу, що його проводить тьютор або ментор. Наприкінці місяця учні рефлексують, що вдалося досягти, а що ні. Мрієбудування, як і весь формаційний курс, тісно пов’язані із розвитком 9-ти пріоритетних компетентностей школи МрійДій.
+        p Дизайн-мислення – це важливий крок для того, щоб перетворити мрію у діяльність, оскільки дизайн мислення – це спосіб нестандартного вирішення проблем, пошук ефективного рішення. В основі його методик розуміння, що в реальному житті часто немає готового рішення. Будь-яка ідея цінна, і її потрібно випробувати перед тим, як відкидати. Кожна спроба – прототип, народжується з мрії – візії, гіпотези, а невдалі спроби – це теж позитивний досвід.
+        <a href="#" target='_blank' class="button button--mimas" type="button">
+          <span>Відвідати сайт обʼєкту</span>
+        </a>
+  .home-news
+    .home-news__content
+      +title-decor()
+      .home-news__title
+        .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Більше проєктів
+        .home-news__nav
+          button(type="button" data-home-news-slider-prev).nav-arrow
+            <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+              <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+            </svg>
+          button(type="button" data-home-news-slider-next).nav-arrow
+            <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+              <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+            </svg>
+      .swiper-container(data-home-news-slider)
+        .swiper-wrapper
+          each val in [1,2,3,4,5,6,7,8,9]
+            .swiper-slide
+              a(href="/single-project").project-card
+                .project-card__img
+                  .project-card__img-wrap
+                    img(src='./assets/images/news-card.jpg', alt="", srcset="")
+                .project-card__text
+                  .project-card__title Готель “Панорама”
+                  .project-card__date.color-gray-dark 2021
+  include ../includes/contact-screen.pug
+  include ../includes/form-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

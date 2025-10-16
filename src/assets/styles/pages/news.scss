@@ -1,0 +1,24 @@
+.news-list {
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    margin-top: calc(var(--section-v-offset) * 0.48) !important;
+    @include to(1024px){
+        margin-top: calc(var(--section-v-offset) * 0.66) !important;
+
+    }
+    &__content {
+        @include row-flex;
+        row-gap: calc(var(--section-v-offset) * 0.48);
+        @include to(1024px){
+            row-gap: 40px;
+        }
+        &>* {
+            @include size(6);
+            @include shift(0);
+            @include size-md(12);
+            @include shift-md(0);
+            @include size-xs(12);
+            @include shift-xs(0);
+        }
+    }
+}

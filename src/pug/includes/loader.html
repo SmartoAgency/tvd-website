@@ -1,0 +1,282 @@
+<style>
+    .loader {
+        background-color: var(--color-white);
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+        transition: background-color .55s ease-in-out;
+    }
+
+    @media screen and (max-width:1024px){
+        .loader__bottom .text-style-1920-h-1 {
+            font-size: 48px;
+        }
+        
+    }
+
+    .loader.hidden {
+        background-color: transparent;
+    }
+
+    .loader__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        transition: .55s ease-in-out;
+    }
+    .loader__bottom.hidden {
+        transform: translateY(150%);
+    }
+    .loader__bottom svg {
+        flex-shrink: 1;
+    }
+    .loader__bottom div {
+        flex-shrink: 0;
+    }
+    .loader__subbottom {
+        margin-top: auto;
+        text-align: left;
+        margin-right: auto;
+        margin-bottom: 8px;
+    }
+    .loader__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;width: 100%;
+    }
+    .loader-percents {
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        height: 4.35vw;
+        position: relative;
+    }
+    @media screen and (max-width:1024px){
+        .loader-percents {
+            transform: scale(2) translateY(-26%);
+            transform-origin: right;
+        }
+    }
+    .loader-percents-tens {
+
+    }
+    .loader-percents-hundreds {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: .5s ease-in-out;
+        transition-delay: 2s;
+        line-height:4.35vw !important;
+        /*transform: translateY(calc(-100% + 70px));*/
+    }
+    .loader-percents-hundreds.animate {
+        transform: translateY(calc(-100% + 4.35vw));
+    }
+    .loader-percents-tens {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: 2s ease-in-out;
+        transition-delay: 0.5s;
+        line-height: 4.35vw !important;
+        /*transform: translateY(calc(-100% + 4.35vw));*/
+    }
+    .loader-percents-tens.animate {
+        transform: translateY(calc(-100% + 4.35vw));
+    }
+    .loader-percents-ones {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: 2.5s ease-in-out;
+        line-height: 4.35vw !important;
+        /*transform: translateY(calc(-100% + 4.35vw));*/
+    }
+    .loader-percents-ones.animate {
+        transform: translateY(calc(-100% + 4.35vw));
+
+    }
+</style>
+<div class="loader">
+    <div class="loader__top">
+        <svg width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.19518 9.30116V4.28661H31.1786V9.30116H19.1229V43H13.3029V9.30116H1.19518ZM36.7668 4.28661L47.5494 35.8029H47.9651L58.7477 4.28661H65.0354L51.1349 43H44.3796L30.4531 4.28661H36.7668ZM78.756 43H69.1946V37.8815H78.4183C81.3629 37.8815 83.8139 37.3359 85.7712 36.2446C87.7285 35.1361 89.1922 33.5165 90.1622 31.386C91.1322 29.2381 91.6172 26.6399 91.6172 23.5913C91.6172 20.5601 91.1322 17.9879 90.1622 15.8746C89.2095 13.7614 87.7805 12.1592 85.8751 11.0679C83.9698 9.95938 81.6054 9.40509 78.782 9.40509H68.9867V4.28661H79.1458C82.9392 4.28661 86.1956 5.05741 88.915 6.59902C91.6345 8.14063 93.7217 10.3578 95.1767 13.2504C96.6317 16.1258 97.3592 19.5728 97.3592 23.5913C97.3592 27.6272 96.6231 31.0915 95.1508 33.9842C93.6958 36.8769 91.5825 39.1027 88.8111 40.6616C86.0397 42.2205 82.688 43 78.756 43ZM72.0526 4.28661V43H66.2067V4.28661H72.0526Z" fill="#0A0F13"/>
+        </svg>
+    
+        <div class="loader-percents text-style-1920-h-1">
+            <div class="loader-percents-hundreds">
+                <span>&nbsp;</span>
+                <span>1</span>
+            </div>
+            <div class="loader-percents-tens">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>0</span>
+            </div>
+            <div class="loader-percents-ones">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>0</span>
+            </div>
+            <span>%</span>
+        </div>
+    </div>
+    <div class="loader__subbottom">Since</div>
+    <div class="loader__bottom">
+        <div class="text-style-1920-h-1">1994</div>
+        <svg preserveAspectRatio="xMaxYMid slice" width="1406" height="38" viewBox="0 0 1406 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1372 16.0917V21.9084H0V16.0917H1372Z" fill="#0A0F13"/>
+            <path d="M1406 19L1387.31 38L1383.19 33.9157L1395 21.9071H1372V16.0929H1395L1383.19 4.08427L1387.31 0L1406 19Z" fill="#0A0F13"/>
+        </svg>
+        <div class="text-style-1920-h-1">2025</div>
+    </div>
+</div>
+
+<style data-styles-for-loader>
+    .page__content>:nth-child(2),
+    .inner-front-screen__bg,
+    .inner-front-screen__title,
+    .header,
+    .inner-front-screen .title-decor,
+    .breadcrumbs {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    const loader = document.querySelector('.loader');
+
+    if (sessionStorage.getItem('loaderClosed')) {
+        loader.remove();
+        window.dispatchEvent(new Event('loaderFinished'));
+    }
+    function digitLoader(callback) {
+        const el = document.querySelector('[data-loader-percent]');
+        let value = 0;
+
+        function render(value) {
+            if (value >= 101) {
+                callback();
+                return;
+            };
+            let newValue = value + 1;
+            el.textContent = value;
+            requestAnimationFrame(() => {
+                render(newValue);
+            })
+        }
+        render(value);
+    }
+
+    function prepareFrontScreenAnimation() {
+        document.querySelectorAll('.home-front-screen__left').forEach(el => {
+            el.style.cssText = `
+                transform: translateX(-100%);
+                transition: 1.2s cubic-bezier(.09,.3,.2,.99);
+            `
+        });
+        document.querySelectorAll('.home-front-screen__right').forEach(el => {
+            el.style.cssText = `
+                transform: translateX(100%);
+                transition: 1.2s cubic-bezier(.09,.3,.2,.99);
+            `
+        });
+    }
+
+    function startFrontScreenAnimation() {
+        document.querySelectorAll('.home-front-screen__left').forEach(el => {
+            el.style.transform = '';
+        });
+        document.querySelectorAll('.home-front-screen__right').forEach(el => {
+            el.style.transform = '';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if (sessionStorage.getItem('loaderClosed')) {
+            window.dispatchEvent(new Event('loaderFinished'));
+            return;
+        }
+        const loader = document.querySelector('.loader');
+
+        prepareFrontScreenAnimation();
+
+        document.querySelector('.loader-percents-ones').addEventListener('transitionend',function(evt){
+            document.querySelector('.loader__bottom').addEventListener('transitionend',function(evt){
+                loader.addEventListener('transitionend', function() {
+                    loader.remove();
+                    
+                }, { once: true });
+                sessionStorage.setItem('loaderClosed', 'true');
+                document.querySelector('.loader').classList.add('hidden');
+                startFrontScreenAnimation();
+                window.dispatchEvent(new Event('loaderFinished'));
+            }, { once: true });
+            document.querySelector('.loader__bottom').classList.add('hidden');
+            
+        }, {
+            once: true
+        });
+
+        document.querySelector('.loader-percents-hundreds').classList.add('animate');
+        document.querySelector('.loader-percents-tens').classList.add('animate');
+        document.querySelector('.loader-percents-ones').classList.add('animate');
+    });
+</script>
+

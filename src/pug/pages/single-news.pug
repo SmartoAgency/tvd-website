@@ -1,0 +1,149 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Липень 2024'
+    var id_page = 'id-page-single-construction'
+    var class_page = 'class-page-single-construction'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Новини',
+        link: '/news'
+      }
+    ];
+    var slides = [
+      './assets/images/news-card.jpg',
+      './assets/images/news-card.jpg',
+      './assets/images/news-card.jpg',
+      './assets/images/news-card.jpg',
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/single-news.bundle.js')
+block content
+  .single-construction
+    img(src="./assets/images/single-news/bg.jpg", alt="", srcset="").single-construction__bg
+    .single-construction__wrapper
+      .single-construction__left
+        include ../includes/breadcrumbs.pug
+        <svg  class="single-construction__left-decor" xmlns="http://www.w3.org/2000/svg" width="41" height="19" viewBox="0 0 41 19" fill="none">
+          <path d="M36.5 10C38.9853 10 41 12.0147 41 14.5C41 16.9853 38.9853 19 36.5 19C35.4354 19 34.4573 18.6303 33.6869 18.0122C32.1204 16.7554 30.5084 15 28.5 15C26.4916 15 24.8796 16.7554 23.3131 18.0122C22.5427 18.6303 21.5646 19 20.5 19C19.4354 19 18.4573 18.6303 17.6869 18.0122C16.1204 16.7554 14.5084 15 12.5 15C10.4916 15 8.87961 16.7554 7.31306 18.0122C6.54272 18.6303 5.56462 19 4.5 19C2.01472 19 0 16.9853 0 14.5C0 12.0147 2.01472 10 4.5 10C5.56462 10 6.54271 10.3697 7.31306 10.9878C8.87961 12.2446 10.4916 14 12.5 14C14.5084 14 16.1204 12.2446 17.6869 10.9878C18.4573 10.3697 19.4354 10 20.5 10C21.5646 10 22.5427 10.3697 23.3131 10.9878C24.8796 12.2446 26.4916 14 28.5 14C30.5084 14 32.1204 12.2446 33.6869 10.9878C34.4573 10.3697 35.4354 10 36.5 10Z" fill="#0A0F13"/>
+        </svg>
+        <hr/>
+        .single-construction__left-sticky
+          a(href="/news").single-flat-back-button
+            .single-flat-back-button__icon
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.3846 4L4 12M4 12L11.3846 20M4 12H20" stroke="#DBE2EA" stroke-width="2"/>
+              </svg>
+            span Назад
+          .single-construction__title На полі почесних поховань №86А Личаківського цвинтаря запрацював інформаційний центр: які послуги там можна отримати
+      .single-construction__right
+        .single-construction__right-top
+          .news-card__date 05.05.2025
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7278 4.72781C16.8443 5.8443 16.8443 7.65449 15.7278 8.77098C15.2675 9.23126 14.6894 9.50175 14.0905 9.58249C12.7507 9.76313 11.1245 9.66804 10.1686 10.624C9.21259 11.58 9.30762 13.2062 9.12694 14.546C9.04618 15.1449 8.77565 15.7231 8.31535 16.1834C7.19886 17.2999 5.38867 17.2999 4.27219 16.1834C3.1557 15.067 3.1557 13.2568 4.27219 12.1403C4.73248 11.68 5.31069 11.4094 5.90958 11.3287C7.24939 11.148 8.87566 11.243 9.83162 10.2871C10.7876 9.33111 10.6925 7.70489 10.8731 6.36508C10.9539 5.76624 11.2244 5.18809 11.6847 4.72781C12.8011 3.61132 14.6113 3.61132 15.7278 4.72781Z" fill="#0A0F13"/>
+            <path d="M15.7278 16.1834C14.6113 17.2999 12.8011 17.2999 11.6846 16.1834C11.2244 15.7232 10.9539 15.145 10.8731 14.5462C10.6925 13.2064 10.7876 11.5801 9.83162 10.6242C8.87566 9.66822 7.24939 9.76325 5.90958 9.58257C5.31069 9.5018 4.73248 9.23127 4.27219 8.77098C3.1557 7.65449 3.1557 5.8443 4.27219 4.72781C5.38868 3.61132 7.19886 3.61132 8.31535 4.72781C8.77565 5.18811 9.04618 5.76632 9.12694 6.36521C9.30762 7.70502 9.21259 9.33129 10.1686 10.2872C11.1245 11.2432 12.7507 11.1481 14.0905 11.3288C14.6894 11.4095 15.2675 11.68 15.7278 12.1403C16.8443 13.2568 16.8443 15.067 15.7278 16.1834Z" fill="#0A0F13"/>
+          </svg>
+        <hr/>
+        .single-construction-slider
+          .slider-navigation
+            button(type="button" data-gallery="prev").navigation-button
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.3846 4L4.00001 12M4.00001 12L11.3846 20M4.00001 12H20" stroke="#DBE2EA" stroke-width="2"/>
+              </svg>
+            button(type="button" data-gallery="next").navigation-button
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12.6154 4L20 12M20 12L12.6154 20M20 12L4 12" stroke="#DBE2EA" stroke-width="2"/>
+              </svg>
+          .single-construction-slider__counter
+            .color-black(data-gallery="current") 01
+            .color-gray-dark /
+            .color-gray-dark(data-gallery="all") 07
+          .swiper-container(data-single-construction-slider)
+            .swiper-wrapper
+              each val in slides
+                .swiper-slide
+                  .single-construction-slider__image
+                    .single-construction-slider__image-wrap
+                      img(src=val, alt="", srcset="" loading="lazy")
+        .single-construction__content
+          h1 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          h2 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          h3 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          h4 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          h5 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          h6 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          ul 
+            li 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+            li 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          ol 
+            li 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+            li 2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka
+          <p><span style="font-weight: 700;">Встигніть придбати </span><b>2-кімнатна квартира 65,1 м² у ЖК бізнес-класу Sofiivka</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Готова для заселення вже цього літа!</b></p>
+          <p><span style="font-weight: 400;"> </span><b>White-box комплектація:</b><b><br>
+              </b><span style="font-weight: 400;">– Всі чорнові роботи виконані, залишилось лише втілити ваш дизайн!</span><span style="font-weight: 400;"><br>
+              </span><span style="font-weight: 400;">– Ідеально для родини – простора кухня-вітальня, окремі кімнати, панорамні вікна.</span></p>
+          <p><span style="font-weight: 400;"> </span><b>Умови акції:</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Перший внесок – $24,738</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Розтермінування на 12 місяців без здорожчання!</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Можливість заселитися одразу після купівлі</b></p>
+          <p><span style="font-weight: 400;"> </span><b>ЖК Sofiivka – це:</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Комплекс бізнес-класу</b><span style="font-weight: 400;"> з власним </span><b>ТРЦ, спорткомплексом, басейнами, Сільпо та кінотеатром</b><b><br>
+              </b><span style="font-weight: 400;"> </span><b>Закрита територія</b><span style="font-weight: 400;"> з озелененням, фонтанами та зонами відпочинку</span><span style="font-weight: 400;"><br>
+              </span><span style="font-weight: 400;"> </span><b>Зручна інфраструктура</b><span style="font-weight: 400;"> – дитячі садочки, школи та магазини поруч</span></p>
+          <p><span style="font-weight: 400;"> </span><b>Кількість квартир за акційною ціною обмежена!</b><b><br>
+              </b><span style="font-weight: 400;">Не втрачайте можливість заселитися вже цього літа – залишайте заявку прямо зараз! </span><span style="font-weight: 400;"><br>
+              </span></p>
+        .single-construction-slider.single-construction-slider--no-b-padding
+          .single-construction__video
+            .single-construction__video-wrap
+              video(controls poster="./assets/images/home/home-projects/park-avenue.jpg" playsinline)
+                source(src="https://smarto.agency/wp-content/themes/smartoagency/static/smartorange_showreel1.mp4", type="video/mp4")
+                <p>Ваш браузер не підтримує HTML5 відео.</p>
+        .single-construction-slider
+          a(href="#" type="button" data-callback-popup-call data-menu-close).button.button--mimas
+            span Кнопка для переходу кудись
+  .home-news
+    .home-news__content
+      +title-decor()
+      .home-news__title
+        .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Більше новин
+        .home-news__nav
+          button(type="button" data-home-news-slider-prev).nav-arrow
+            <svg preserveAspectRatio="xMinYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+              <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+            </svg>
+          button(type="button" data-home-news-slider-next).nav-arrow
+            <svg preserveAspectRatio="xMaxYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+              <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+            </svg>
+      .swiper-container(data-home-news-slider)
+        .swiper-wrapper
+          each val in [1,2,3,4,5,6,7,8,9]
+            .swiper-slide
+              .news-card
+                .news-card__img
+                  .news-card__img-wrapper
+                    img(src='./assets/images/news-card.jpg' alt='news-1' loading="lazy")
+                .news-card__text 
+                  .news-card__text-title На полі почесних поховань №86А Личаківського цвинтаря запрацював інформаційний центр: які послуги там можна отримати
+                  .news-card__text-number.text-style-1920-h-1 24
+                  div Новина
+                  .news-card__text-month Жовтня 2024
+  include ../includes/contact-screen.pug
+  include ../includes/form-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

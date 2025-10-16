@@ -1,0 +1,52 @@
+-
+  var projects = [
+    {"filename":"Image.jpg", text: 'Готель “Панорама”'},
+    {"filename":"Image-.jpg", text: 'Приватний дитячий садок МрійДій'},
+    {"filename":"Image-0.jpg", text: 'Приватна школа МрійДій'},
+    {"filename":"Image-1.jpg", text: 'Медичний центр Святої Параскеви'},
+    {"filename":"Image-2.jpg", text: 'Меморіал «Небесної Сотні»'},
+    {"filename":"Image-3.jpg", text: 'Реконструкція Гранд Готелю'},
+    {"filename":"Image-4.jpg", text: 'Житловий Квартал «Софіївка»'},
+    {"filename":"Image-5.jpg", text: 'Готель Ibis Styles Lviv Center'},
+    {"filename":"Image-6.jpg", text: 'Медичний центр та «Лелека»'},
+    {"filename":"Image-7.jpg", text: 'Стоматологічна клініка Заблоцького'},
+    {"filename":"Image-8.jpg", text: 'Український Католицький Університет'},
+  ]
+
+.home-projects.g_side_padding
+  .home-projects__content
+    +title-decor()
+    .home-projects__top
+      .home-projects__title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1 Визначні проєкти
+      .home-projects__nav
+        button(type="button" data-home-projects-slider-prev).nav-arrow
+          <svg preserveAspectRatio="xMinYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+          </svg>
+        button(type="button" data-home-projects-slider-next).nav-arrow
+          <svg preserveAspectRatio="xMaxYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+          </svg>
+    .swiper-container(data-home-projects-slider)
+      .swiper-wrapper
+        each project, index in projects
+          .swiper-slide.home-projects__slide(data-home-projects-slide)
+            .home-projects__img-wrapper
+              .home-projects__img-wrapper-cover
+              img(src=`./assets/images/home/home-projects/${project.filename}`, alt="" loading="lazy", srcset="")
+            .home-projects__text.color-black #{project.text}
+        .swiper-slide.home-projects__slide
+          a.more-projects-slide(href="/projects")
+            .more-projects-slide__content
+              img(src="./assets/images/home/home-projects/sky.jpg", alt="", srcset="" loading="lazy").more-projects-slide__bg
+              img(src="./assets/images/home/home-projects/house.png", alt="", srcset="" loading="lazy").more-projects-slide__img
+              .more-projects-slide__title.text-style-1920-h-1.text-style-375-h-1.color-white More
+              .more-projects-slide__description.text-style-1920-h-3.color-black projects
+              <svg class="more-projects-slide__icon" width="90" height="27" viewBox="0 0 90 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M67 11.5V15.5H0V11.5H67Z" fill="#0A0F13"/>
+                <path d="M89.4369 13.5141L76.5528 26.6112L73.7113 23.7958L81.8542 15.518H67V11.5102H81.8542L73.7113 3.23236L76.5528 0.416992L89.4369 13.5141Z" fill="#0A0F13"/>
+              </svg>
+            .more-projects-slide__link.text-style-1920-h-3.color-black більше проектів
+        

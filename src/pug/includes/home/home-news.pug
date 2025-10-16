@@ -1,0 +1,29 @@
+.home-news
+  .home-news__content
+    +title-decor()
+    .home-news__title
+      .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Новини
+      .home-news__nav
+        button(type="button" data-home-news-slider-prev).nav-arrow
+          <svg preserveAspectRatio="xMinYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M59.0005 11.9995L3.99935 11.9997M3.99935 11.9997L13.9871 21.9874M3.99935 11.9997L13.9871 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="4.07843" y="9.18" width="4" height="4" transform="rotate(45 4.07843 9.18)" fill="#0A0F13"/>
+          </svg>
+        button(type="button" data-home-news-slider-next).nav-arrow
+          <svg preserveAspectRatio="xMaxYMid slice" width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.999501 11.9995L56.0006 11.9997M56.0006 11.9997L46.0129 21.9874M56.0006 11.9997L46.0129 2.01191" stroke="#0A0F13" stroke-width="4"/>
+            <rect x="56.0284" y="9.14" width="4" height="4" transform="rotate(45 56.0284 9.14)" fill="#0A0F13"/>
+          </svg>
+    .swiper-container(data-home-news-slider)
+      .swiper-wrapper
+        each val in [1,2,3]
+          .swiper-slide
+            .news-card
+              .news-card__img
+                .news-card__img-wrapper
+                  img(src='./assets/images/news-card.jpg' alt='news-1' loading="lazy")
+              .news-card__text 
+                .news-card__text-title На полі почесних поховань №86А Личаківського цвинтаря запрацював інформаційний центр: які послуги там можна отримати
+                .news-card__text-number.text-style-1920-h-1 24
+                div Новина
+                .news-card__text-month Жовтня 2024

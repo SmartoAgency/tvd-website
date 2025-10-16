@@ -1,0 +1,26 @@
+.home-about
+  .home-about__content
+    .home-about__left
+      .home-about__left-images(data-home-left-images)
+        .home-about__img-wrapper
+          .home-about__img
+            img(src="./assets/images/home/home-about/circle1.jpg", alt="")
+        .home-about__img-wrapper
+          .home-about__img
+            img(src="./assets/images/home/home-about/circle2.jpg", alt="")
+      .home-about__left-title
+        .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Різномантітні 
+        .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Рішення
+    .home-about__right
+      +title-decor()
+      .home-about__right-title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1(data-split-lines-new-animation) Про компанію
+      .home-about__text
+        <svg class="home-about__text-icon" width="24" height="39" viewBox="0 0 24 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 15C14.3391 15 16.2353 16.8962 16.2353 19.2353C16.2353 20.1996 15.913 21.0886 15.3703 21.8004C14.156 23.3931 12.3529 24.997 12.3529 26.9998C12.3529 29.0026 14.156 30.6066 15.3702 32.1993C15.913 32.9113 16.2353 33.8004 16.2353 34.7647C16.2353 37.1038 14.3391 39 12 39C9.66091 39 7.76471 37.1038 7.76471 34.7647C7.76471 33.8004 8.087 32.9113 8.62975 32.1993C9.84396 30.6066 11.6471 29.0026 11.6471 26.9998C11.6471 24.997 9.84395 23.3931 8.6297 21.8004C8.08698 21.0886 7.76471 20.1996 7.76471 19.2353C7.76471 16.8962 9.66091 15 12 15Z" fill="#0A0F13"/>
+          <path d="M24 27C24 29.3391 22.1038 31.2353 19.7647 31.2353C18.8004 31.2353 17.9114 30.913 17.1996 30.3703C15.6069 29.156 14.003 27.3529 12.0002 27.3529C9.9974 27.3529 8.3934 29.156 6.80066 30.3702C6.08871 30.913 5.19964 31.2353 4.23529 31.2353C1.89621 31.2353 -1.02245e-07 29.3391 0 27C1.02245e-07 24.6609 1.89621 22.7647 4.23529 22.7647C5.19964 22.7647 6.08871 23.087 6.80066 23.6298C8.3934 24.844 9.9974 26.6471 12.0002 26.6471C14.003 26.6471 15.6069 24.844 17.1996 23.6297C17.9114 23.087 18.8004 22.7647 19.7647 22.7647C22.1038 22.7647 24 24.6609 24 27Z" fill="#0A0F13"/>
+        </svg>
+        //- Lorem ipsum dolor - цей текст треба для анімації
+        .home-about__text-text.text-style-1920-h-2.color-gray-light(data-fill-text-animation) Lorem ipsum dolor Компанію заснував інженер, натхненний німецькою точністю та культурою будівництва. Відтоді TVD стала піонером приватного та інфраструктурного будівництва в Україні, першою впроваджуючи технології та стандарти, які нині є нормою: від бездоганних внутрішніх робіт до складних інженерних рішень.
+        a(href="/about" type="button" data-callback-popup-call data-menu-close).button.button--mimas
+          span Дізнатись більше
+

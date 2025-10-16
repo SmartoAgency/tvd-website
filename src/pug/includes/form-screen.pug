@@ -1,0 +1,55 @@
+.form-screen
+  .form-screen__bg
+    video.form-screen__video(autoPlay muted loop playsinline data-form-screen-src="./static/form-screen-video.mp4" type="video/mp4" data-form-screen-video)
+  .form-screen__content
+    .form-screen__description
+      .form-screen__description-bg
+        <picture>
+            <source srcset="./assets/images/form-screen-bg.png" media="(min-width: 1025px)">
+            <source srcset="./assets/images/form-screen-bg-tablet.png" media="(max-width: 1024px) and (min-width: 601px)">
+            <source srcset="./assets/images/form-screen-bg-mobile.png" media="(max-width: 600px)">
+            <img src="#" alt="" loading="lazy">
+        </picture>
+      .form-screen__description-list 
+        a(data-title="Головна" href="/").text-style-1920-h-2.color-black.form-screen__link 
+          span Головна
+        a(data-title="Про компанію" href="/about").text-style-1920-h-2.color-black.form-screen__link 
+          span Про компанію
+        a(data-title="Наші проєкти" href="/projects").text-style-1920-h-2.color-black.form-screen__link 
+          span Наші проєкти
+        a(data-title="Послуги" href="/services").text-style-1920-h-2.color-black.form-screen__link 
+          span Послуги
+        a(data-title="Партнери та клієнти" href="#").text-style-1920-h-2.color-black.form-screen__link 
+          span Партнери та клієнти
+        a(data-title="Новини" href="/news").text-style-1920-h-2.color-black.form-screen__link 
+          span Новини
+        a(data-title="Контакти" href="#").text-style-1920-h-2.color-black.form-screen__link 
+          span Контакти
+    .form-screen__form
+      form(data-footer-form).form
+        .form__title.text-style-1920-h-2 Залишились запитання?
+        .form__subtitle.text-style-1920-body Ми готові дати відповідь!
+        .form__input-group(data-field-input data-field-name data-status="field--inactive")
+          .form__input-group-info-label Ім’я
+          <svg class="form__input-group-required-label" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M10.7435 16.6822L10.9052 13.1352L7.92432 15.0647L7 13.4702L10.1658 11.8527L7 10.2351L7.92432 8.61756L10.9052 10.5471L10.7435 7H12.569L12.4073 10.5471L15.3882 8.61756L16.3125 10.2351L13.1467 11.8527L16.3125 13.4702L15.3882 15.0647L12.4073 13.1352L12.569 16.6822H10.7435Z" fill="var(--color-black)"/>
+          </svg>
+          input.form__input(type="text" placeholder="Ім’я" name="name")
+          .form__input-message(data-input-message)
+        .form__input-group(data-field-input data-field-phone data-status="field--inactive")
+          .form__input-group-info-label Телефон
+          <svg class="form__input-group-required-label" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M10.7435 16.6822L10.9052 13.1352L7.92432 15.0647L7 13.4702L10.1658 11.8527L7 10.2351L7.92432 8.61756L10.9052 10.5471L10.7435 7H12.569L12.4073 10.5471L15.3882 8.61756L16.3125 10.2351L13.1467 11.8527L16.3125 13.4702L15.3882 15.0647L12.4073 13.1352L12.569 16.6822H10.7435Z" fill="var(--color-black)"/>
+          </svg>
+          input.form__input(type="text" placeholder="Телефон" name="phone")
+          .form__input-message(data-input-message)
+        button(type="submit" data-btn-submit class="button button--mimas")
+          span(data-title="НАДІСЛАТИ ПОВІДОМЛЕННЯ") НАДІСЛАТИ ПОВІДОМЛЕННЯ
+          span(data-btn-submit-text)
+          .button-primary__circle
+  .form-screen__arrow(data-up-arrow)
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M1 6.53846L7 1M7 1L13 6.53846M7 1L7 13" stroke="#0A0F13"/>
+    </svg>
+    .form-screen__arrow-text.text-style-1920-buttons.color-black Вгору
+

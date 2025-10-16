@@ -1,0 +1,20 @@
+.services-container {
+    margin-top: 0 !important;
+    .services-block {
+        position: sticky;
+        top: 0;
+        background-color: var(--color-white);
+        border-top: 1px solid var(--Gray-light, #A8A8A8);
+        background: var(--White, #EFF3F5);
+    }
+    @for $i from 1 through 8 {
+        .services-block:nth-child(#{$i}) {
+            top: 16px * $i;
+        }
+    }
+    @include to(600px){
+        .services-block:last-child {
+            padding-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.home-news {
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    margin-bottom: var(--section-v-offset);
+    overflow: hidden;
+    @include to(1024px){
+        margin-bottom: calc(var(--section-v-offset) / 2);
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        width: 100%;
+        @include to(600px){
+            margin-bottom: 20px;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        @include to(600px){
+            gap: 40px;
+        }
+        &>.button-primary {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        @include to(600px){
+            gap: 8px;
+            svg {
+                width: 40px;
+                height: 24px;
+            }
+        }
+    }
+    .news-card {
+        // width: calc(33.33333% - 40px / 1);
+        // @include to(1024px){
+        //     width: calc(50% - 40px / 1);
+        // }
+        // @include to(600px){
+        //     width: 100%;
+        // }
+    }
+    .swiper-slide~.swiper-slide .news-card:after {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 20px;
+        height: calc(100% - 20px);
+        width: 1px;
+        background-color: rgba($color-black, 0.2);
+    }
+    .swiper-container {
+        width: 100%;
+        @include to(600px){
+            margin-left: calc(var(--page-side-fields) * -1);
+            width: calc(100% + var(--page-side-fields) * 2);
+            padding-left: var(--page-side-fields);
+            margin-right: calc(var(--page-side-fields) * -1);
+            padding-right: var(--page-side-fields);
+        }
+    }
+    .slider-navigation {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateY(-50%);
+        z-index: 2;
+        pointer-events: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        &>* {
+            pointer-events: auto;
+        }
+        .swiper-button-lock {
+            display: none;
+        }
+    }
+    .title-decor {
+        @include to(600px){
+            margin-bottom: 0;
+        }
+    }
+}

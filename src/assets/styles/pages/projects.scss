@@ -1,0 +1,155 @@
+.inner-front-screen--projects {
+    @include to(600px){
+        .inner-front-screen__bg {
+            img {
+                object-position: 50% 40%;
+            }
+        }
+    }
+}
+
+.projects-filter {
+    margin-top: calc(var(--section-v-offset) / 2) !important;
+    margin-bottom: calc(var(--section-v-offset) / -2) !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    @include to(600px){
+        row-gap: 8px;
+        column-gap: 40px;
+    }
+    &__button {
+        cursor: pointer;
+        position: relative;
+        --animation-primary: cubic-bezier(0.83, 0, 0.17, 1);
+        @include to(600px){
+            &:nth-child(2) {
+                width: 70%;
+            }
+        }
+        input {
+            display: none;
+        }
+        &__title {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            &:before {
+                content: attr(data-title);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                color: var(--color-black);
+                transition: 0.2s ease-in-out;
+            }
+            &:after {
+                content: attr(data-title);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                color: var(--color-black);
+                transition: 0.2s ease-in-out;
+                transform: translateY(100%);
+            }
+        }
+        &__line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-black);
+            transition: transform 0.725s var(--animation-primary);
+            transform-origin: left;
+            transform: scaleX(1) rotate(0.001deg);
+            transition-delay: 0.2s;
+            bottom: 0;
+        }
+        &__line2 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-black);
+            transition: transform 0.725s var(--animation-primary);
+            transform-origin: right;
+            transform: scaleX(0) rotate(0.001deg);
+            transition-delay: 0s;
+        }
+        &__circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 100px;
+            border: 1px solid var(--color-white);
+            
+            transition: 0.2s ease-in-out;
+        }
+        
+        @media (hover: hover) {
+            &__title {
+                color: transparent;
+            }
+            &:hover &__line {
+                transform-origin: right;
+                transform: scaleX(0) rotate(0.001deg);
+                transition-delay: 0s;
+            }
+            &:hover &__line2 {
+                transform-origin: left;
+                transform: scaleX(1) rotate(0.001deg);
+                transition-delay: 0.2s;
+            }
+            &:hover &__circle {
+                background-color: var(--color-white);
+                transform: scale(0.87);
+            }
+            &--dark:hover &__circle {
+                background-color: var(--color-black);
+            }
+            &:hover &__title:before {
+                transform: translateY(-100%);
+            }
+            &:hover &__title:after {
+                transform: translateY(0%);
+            }
+        }
+    }
+    &__button:not(.active):not(:hover) .projects-filter__button__line,
+    &__button:not(.active):not(:hover) .projects-filter__button__line2 {
+        display: none !important;
+    }
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 80px;
+    column-gap: 20px;
+    position: relative;
+    z-index: 2;
+    @include to(1024px){
+        grid-template-columns: 1fr;
+        row-gap: 60px;
+    }
+}
+
+
+.project-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    gap: 40px;
+    @include to(600px){
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}

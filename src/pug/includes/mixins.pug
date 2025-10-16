@@ -1,0 +1,83 @@
+mixin testCard(link, src, title, descr)
+	a(href=link).card-item
+		img.card-item__img(src=src alt='foto-1' title="title-foto")
+		h2.card-item__title=title
+		p.card-item__descr=descr
+
+mixin icon(icon, condition)
+	if(condition)
+		svg(class= icon  role="presentation")&attributes(attributes)
+			use(xlink:href="#"+ icon + "")
+	else
+		span(class='svg-wrap')&attributes(attributes)
+			svg(class="svg-icon icon--"+ icon + ""  role="presentation")
+				use(xlink:href="#"+ icon + "")
+mixin svg(icon)
+		svg(class="icon--"+ icon + ""  role="presentation")&attributes(attributes)
+			use(xlink:href="#icon-"+ icon + "")
+
+mixin link-blank(href)
+	a(herf=href rel="nofollow" target="_blank")
+mixin img(src)
+	img(src='./assets/images/'+src+'' title="foto" alt="foto")&attributes(attributes)
+
+mixin btn(text)
+	img(type="button" class="button button-reset--default-styles")&attributes(attributes)
+
+mixin SelectBox(name, id, options)
+	.u-select-box
+		.u-select-box__current(tabindex="1")
+			each option, index in options
+				.u-select-box__value
+					if(index == 0)
+						input.u-select-box__input(class='js_'+1+'checkbox js_select_checkbox' type="radio" id=id+index value=option.value name=id checked)
+					else
+						input.u-select-box__input(class='js_'+id+'checkbox js_select_checkbox' type="radio" id=id+index value=option.value name=id)
+					p.u-select-box__input-text #{option.name}
+				+svg('select-arr').u-select-box__icon
+		ul.u-select-box__list
+			each option, index in options
+				li
+					label.u-select-box__option(for=id+index aria-hidden) #{option.name}
+
+mixin RangeSlider(options)
+	each option, index in options
+		li.range-item.filter__item.js-range-item
+			h4.range-item__label.filter__label #{option.label}
+			input.js-range-init(id=option.id type="hidden" data-from=option.from data-min=option.min data-to=option.to data-max=option.max)
+			.u-range-item-nav
+				input(id=option.id+"_min" class="js_"+option.id+"_min js-current-min" name=option.id+"_min" maxlength=option.max type="number" min=option.min value=option.min max=option.max)
+				input(id=option.id+"_max" class="js_"+option.id+"_max js-current-max" name=option.id+"_max" maxlength=option.max type="number" min=option.min value=option.max max=option.max)
+
+include ../components/form/form.pug
+
+
+mixin button-primary(title)
+	button(type="button" class="button-primary")&attributes(attributes)
+		span(data-title=title) #{title}
+		.button-primary__circle
+mixin button-primary-link(title, url, blank = false)
+	if blank
+		a(href=url target="_blank" rel="nofollow").button-primary&attributes(attributes)
+			span(data-title=title) #{title}
+			.button-primary__circle
+	else
+		a(href=url).button-primary&attributes(attributes)
+			span(data-title=title) #{title}
+			.button-primary__circle
+
+
+mixin title-decor()
+	.title-decor
+		<svg width="41" height="10" viewBox="0 0 41 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M36.5 0.5C38.9853 0.5 41 2.51472 41 5C41 7.48528 38.9853 9.5 36.5 9.5C35.4354 9.5 34.4573 9.13028 33.6869 8.51223C32.1204 7.2554 30.5084 5.5 28.5 5.5C26.4916 5.5 24.8796 7.2554 23.3131 8.51223C22.5427 9.13028 21.5646 9.5 20.5 9.5C19.4354 9.5 18.4573 9.13028 17.6869 8.51223C16.1204 7.2554 14.5084 5.5 12.5 5.5C10.4916 5.5 8.87961 7.2554 7.31306 8.51223C6.54272 9.13028 5.56462 9.5 4.5 9.5C2.01472 9.5 0 7.48528 0 5C0 2.51472 2.01472 0.5 4.5 0.5C5.56462 0.5 6.54271 0.869723 7.31306 1.48777C8.87961 2.7446 10.4916 4.5 12.5 4.5C14.5084 4.5 16.1204 2.7446 17.6869 1.48777C18.4573 0.869723 19.4354 0.5 20.5 0.5C21.5646 0.5 22.5427 0.869723 23.3131 1.48777C24.8796 2.7446 26.4916 4.5 28.5 4.5C30.5084 4.5 32.1204 2.7446 33.6869 1.48777C34.4573 0.869723 35.4354 0.5 36.5 0.5Z" fill="#0A0F13"/>
+		</svg>
+		.title-decor-line
+		.color-black.text-style-1920-buttons TVD
+mixin title-decor-inner-pages()
+	.title-decor
+		<svg width="41" height="10" viewBox="0 0 41 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M36.5 0.5C38.9853 0.5 41 2.51472 41 5C41 7.48528 38.9853 9.5 36.5 9.5C35.4354 9.5 34.4573 9.13028 33.6869 8.51223C32.1204 7.2554 30.5084 5.5 28.5 5.5C26.4916 5.5 24.8796 7.2554 23.3131 8.51223C22.5427 9.13028 21.5646 9.5 20.5 9.5C19.4354 9.5 18.4573 9.13028 17.6869 8.51223C16.1204 7.2554 14.5084 5.5 12.5 5.5C10.4916 5.5 8.87961 7.2554 7.31306 8.51223C6.54272 9.13028 5.56462 9.5 4.5 9.5C2.01472 9.5 0 7.48528 0 5C0 2.51472 2.01472 0.5 4.5 0.5C5.56462 0.5 6.54271 0.869723 7.31306 1.48777C8.87961 2.7446 10.4916 4.5 12.5 4.5C14.5084 4.5 16.1204 2.7446 17.6869 1.48777C18.4573 0.869723 19.4354 0.5 20.5 0.5C21.5646 0.5 22.5427 0.869723 23.3131 1.48777C24.8796 2.7446 26.4916 4.5 28.5 4.5C30.5084 4.5 32.1204 2.7446 33.6869 1.48777C34.4573 0.869723 35.4354 0.5 36.5 0.5Z" fill="#0A0F13"/>
+		</svg>
+		.title-decor-line
+		img(src="./assets/images/clover-for-inner-pages.svg", alt="", srcset="").title-decor-icon-for-inner-pages

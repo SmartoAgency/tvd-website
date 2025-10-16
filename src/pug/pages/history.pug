@@ -1,0 +1,917 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Історія компанії'
+    var id_page = 'id-page-history'
+    var class_page = 'class-page-history'
+    var breadcrumbsSubitem = [
+    ]
+    var title1 = {
+      year1: '1992',
+      year2: '2004',
+      description: 'Перший етап розвитку компанії, період формування і становлення, реалізації перших значних будівельних та реконструкційних проєктів.'
+    }
+    var title2 = {
+      year1: '2004',
+      year2: '2010',
+      description: 'Етап, коли компанія перейшла до реалізації більш складних і масштабних проєктів, розширення діяльності та збільшення портфоліо.'
+    }
+    var title3 = {
+      year1: '2010',
+      year2: '2014',
+      description: 'Етап, коли TVD взялася за масштабні суспільно значимі та медичні проєкти.'
+    }
+    var title4 = {
+      year1: '2014',
+      year2: 'Наш час',
+      description: 'Сучасний етап компанії, коли TVD активно займається будівництвом великих медичних центрів, готелів та масштабних інфраструктурних об\'єктів.'
+    }
+    var block1Column1 = [
+      {
+        "date": "1994 р.",
+        "type": "Меценатство",
+        "title": "Допомога Церкві Святої Анни",
+        "address": "Львів, вул. Городоцька, 32",
+        "labels": ["Оздоблювальні", "Реконструкція"],
+        "className": "on-right",
+        mobileIndex: 10
+      },
+      
+      {
+        "date": "1997 р.",
+        "type": "спорт",
+        "title": "Заснування футзального клубу «ТВД»",
+        "address": "",
+        "labels": [],
+        "className": "on-left",
+        mobileIndex: 30
+      },
+      {
+        "date": "2000 р.",
+        "type": "спорт",
+        "title": "Здобуття чемпіонства Львівської області",
+        "address": "",
+        "labels": [],
+        "className": "on-right",
+        mobileIndex: 40
+      },
+      {
+        "date": "2002 р.",
+        "type": "Житловий",
+        "title": "Реконструкція санаторію «Кришталевий Палац»",
+        "img": "./assets/images/history/images/crystal-palace.jpg",
+        "address": "Трускавець, вул. Суховоля, 35",
+        "labels": ["Реконструкція", "Оздоблювальні"],
+        "className": "on-left",
+        mobileIndex: 50
+      },
+      {
+        "date": "2003 р.",
+        "type": "Спорт",
+        "title": "Перехід у вищу лігу України",
+        "address": "",
+        "labels": [],
+        "className": "on-right",
+        mobileIndex: 70
+      }
+    ]
+    var block1Column2 = [
+      {
+        "date": "1994 р.",
+        "type": "Громадський",
+        "title": "Реконструкція будинку науки і творчості Львівської залізниці (Палац Залізничників)",
+        "address": "Львів, вул. Федьковича, 54/56",
+        "labels": ["Інженерні мережі", "Реконструкція"],
+        "className": "on-left",
+        mobileIndex: 20
+      },
+      {
+        "date": "1999 р.",
+        "type": "Медичний",
+        "title": "Реконструкція Маріот Медікал Центр",
+        "img": "./assets/images/history/images/mariott-medical-center.jpg",
+        "address": "Трускавець, Роксолани, 6",
+        "labels": ["Оздоблювальні", "Реконструкція"],
+        "className": "on-right",
+        mobileIndex: 30
+      },
+      {
+        "date": "2002-2003 р.",
+        "type": "офісний",
+        "title": "Філія АТ «Кредобанк»",
+        "address": "Львів, вул. Ряшівська, 9",
+        "img": "./assets/images/history/images/kredobank.jpg",
+        "labels": [
+          "Монтажні",
+          "Покрівельні",
+          "Бетонні",
+          "Мурувальні",
+          "Благоустрій",
+          "Оздоблювальні",
+          "Реконструкція",
+          "Інженерні мережі"
+        ],
+        "className": "on-left",
+        mobileIndex: 60
+      },
+    ]
+    var block2Column1 = [
+      {
+        "date": "2004 р.",
+        "type": "Житловий",
+        "title": "8-ми квартирний житловий будинок",
+        "address": "Львів, вул. Й. Сліпого",
+        "labels": [
+          "Підготовчі",
+          "Земляні",
+          "Монтажні",
+          "Бетонні",
+          "Мурувальні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-right",
+        mobileIndex: 10
+      },
+      {
+        "date": "2005-2006 р.",
+        "type": "Релігійний",
+        "title": "Реконструкція реколекційного центру Сестер Катехиток",
+        "address": "Брюховичі, вул. Широка, 4",
+        "img": "./assets/images/history/images/recolection-center-st-catehytok.jpg",
+        "labels": [
+          "Інженерні мережі",
+          "Реконструкція"
+        ],
+        "className": "on-left",
+        mobileIndex: 30
+      },
+      {
+        "date": "2007-2008 р.",
+        "type": "Офісний",
+        "title": "Офісне приміщення ПАТ «Кредобанк»",
+        "img": "./assets/images/history/images/office-kredobank.jpg",
+        "address": "Львів, вул. Луганська, 16",
+        "labels": [
+          "Бетонні",
+          "Мурувальні",
+          "Оздоблювальні",
+          "Монтажні",
+          "Покрівельні",
+          "Інженерні мережі",
+          "Реконструкція",
+          "Благоустрій"
+        ],
+        "className": "on-right",
+        mobileIndex: 50
+      }
+    ]
+    var block2Column2 = [
+      {
+        "date": "2005-2006 р.",
+        "type": "Житловий",
+        "title": "Індивідуальний житловий будинок",
+        "address": "Конча-Заспа",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-left",
+        mobileIndex: 20
+      },
+      {
+        "date": "2006 р.",
+        "type": "Житловий",
+        "title": "Відомче житло «Ренесанс-Брюховичі»",
+        "address": "Брюховичі, вул. Курортна, 6",
+        "labels": [
+          "Підготовчі",
+          "Земляні",
+          "Монтажні",
+          "Бетонні",
+          "Мурувальні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-right",
+        mobileIndex: 40
+      },
+      {
+        "date": "2008 р.",
+        "type": "Спорт",
+        "title": "Здобуття кубку України",
+        "address": "",
+        "labels": [],
+        "className": "on-left",
+        mobileIndex: 60
+      },
+      {
+        "date": "2009-2012 р.",
+        "type": "Житловий",
+        "title": "Реконструкція будинку №3",
+        "address": "Київ, вул. Шовковична",
+        "labels": [
+          "Бетонні",
+          "Мурувальні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Реконструкція",
+          "Благоустрій",
+          "Інженерні мережі",
+        ],
+        "className": "on-left",
+        mobileIndex: 70
+      },
+    ]
+
+    var block3Column1 = [
+      {
+        "date": "2010–сьогодні",
+        "type": "спорт",
+        "title": "Футзальний клуб «ТВД-Ветеран» здобуває чемпіонство України у категорії 50+, 55+, 60+, а також стає Володарями Кубку 40+, 50+, 55+, 60+.",
+        "address": "",
+        "labels": [],
+        "className": "on-right",
+        mobileIndex: 10
+      },
+      {
+        "date": "2012 р.",
+        "type": "громадський",
+        "title": "Західна трибуна стадіону \"Арена Львів\"",
+        "address": "Львів, вул. Стрийська, 199",
+        "img": "./assets/images/history/images/arena-lviv.jpg", 
+        "labels": [
+          "Інженерні мережі",
+          "Оздоблювальні",
+          "Благоустрій"
+        ],
+        "className": "on-left",
+        mobileIndex: 30
+      },
+    ]
+
+
+    var block3Column2 = [
+      {
+        "date": "2010-2017 р.",
+        "type": "Навчальний",
+        "title": "Університетське містечко та Колегіум Українського Католицького Університету",
+        "img": "./assets/images/history/images/university-campus-colegium-katolyckoho-universytetu.jpg", 
+        "address": "Львів, Козельницька, 2",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 20
+      },
+      {
+        "date": "2013 р.",
+        "type": "Спортивний",
+        "title": "Реконструкція спорткомплексу «Будівельник»",
+        "address": "Львів, вул. Керченська, 8",
+        "labels": [
+          "Бетонні",
+          "Мурувальні",
+          "Оздоблювальні",
+          "Монтажні",
+          "Покрівельні",
+          "Інженерні мережі",
+          "Реконструкція",
+          "Благоустрій"
+        ],
+        "className": "on-right",
+        mobileIndex: 40
+      }
+    ]
+
+    
+    var block4Column1 = [
+      {
+        "date": "2014-2015 р.",
+        "type": "Житловий",
+        "title": "Готель Ibis Styles Lviv Center",
+        "address": "Львів, вул. Шухевича, 3",
+        "img": "./assets/images/history/images/ibis-center-lviv.jpg",
+        "labels": [
+          "Бетонні",
+          "Мурувальні",
+          "Оздоблювальні",
+          "Монтажні",
+          "Покрівельні",
+          "Пусконалагоджувальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію"
+        ],
+        "className": "on-right",
+        mobileIndex: 10
+      },
+      {
+        "date": "2014-2016 р.",
+        "type": "Медичний",
+        "title": "Медичний центр та приватний пологовий будинок «Лелека»",
+        "address": "Київ, вул. Квітки Цісик, 56",
+        "img": "./assets/images/history/images/med-center-leleka.jpg",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 30
+      },
+      {
+        "date": "2018 р.",
+        "type": "Житловий",
+        "title": "Багатоквартирний житловий будинок",
+        "address": "Яворів",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-left",
+        mobileIndex: 60
+      },
+      {
+        "date": "2018-2020 р.",
+        "type": "Громадський",
+        "title": "Пам’ятка-меморіал та громадський простір з вшануванням пам’яті героїв «Небесної Сотні»",
+        "address": "Львів, вул. М. Кривоноса",
+        "img": "./assets/images/history/images/nebesna-sotnya-memorial.jpg",
+        "labels": [
+          "Підготовчі",
+          "Земляні",
+          "Оздоблювальні",
+          "Бетонні",
+          "Монтажні",
+          "Пусконалагоджувальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію"
+        ],
+        "className": "on-right",
+        mobileIndex:70
+      },
+      {
+        "date": "2019-2021 р.",
+        "type": "Навчальний",
+        "title": "Приватна школа МрійДій",
+        "img": "./assets/images/history/images/mriy-diy-private-school.jpg",
+        "address": "Львів, вул. Угорська, 12Е",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 90
+      },
+      {
+        "date": "2020 р.",
+        "type": "меценатство",
+        "title": "Добудова пам’ятки-меморіалу «Небесної Сотні»",
+        "address": "Львів, вул. М. Кривоноса",
+        "labels": [
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-right",
+        mobileIndex: 110
+      },{
+        "date": "2022-2024 р.",
+        "type": "Громадський",
+        "title": "Реконструкція ресторану Cent Aura/Кентавра",
+        "img": "./assets/images/history/images/restaraunt-centaura.jpg",
+        "address": "Львів, площа Ринок, 34",
+        "labels": [
+          "Оздоблювальні",
+          "Мурувальні",
+          "Монтажні",
+          "Інженерні мережі",
+          "Реконструкція",
+          "Благоустрій"
+        ],
+        "className": "on-left",
+        mobileIndex: 130
+      },
+      {
+        "date": "2024 р.",
+        "type": "Житловий",
+        "title": "Відпочинковий комплекс та п’ятизірковий готель «Панорама Східниця»",
+        "address": "Східниця, урочище Прикірне, 7",
+        "img": "./assets/images/history/images/hotel-panorama-shidnytsia.jpg",
+        "labels": [
+          "Підготовчі",
+          "Земляні",
+          "Монтажні",
+          "Бетонні",
+          "Мурувальні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-right",
+        mobileIndex: 150
+      },
+      {
+        "date": "2025 р.",
+        "type": "меценатство",
+        "title": "Провели ремонт у квартирі сім'ї героя України Олександра Петраківського",
+        "address": "Львів, вул. Угорська, 12",
+        "labels": [
+          "Інженерні мережі",
+          "Монтажні",
+          "Оздоблювальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 170
+      }
+    ]
+
+    var block4Column2 = [
+      
+      {
+        "date": "2014-2015 р.",
+        "type": "Житловий",
+        "title": "Багатоквартирний житловий будинок з вбудованими нежитловими приміщеннями",
+        "address": "Львів, вул. Цехова",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-left",
+        mobileIndex: 20
+      },
+      {
+        "date": "2015+р.",
+        "type": "Житловий",
+        "title": "Житловий Квартал «Софіївка»",
+        "address": "Львів, вул. Угорська, 12Е",
+        "img": "./assets/images/history/images/sofiivka.jpg",
+        "labels": [
+          "Проєктувальні",
+          "Підготовчі",
+          "Мурувальні",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Пусконалагоджувальні",
+          "Здача в експлуатацію"
+        ],
+        "className": "on-right",
+        mobileIndex: 40
+      },
+      {
+        "date": "2016-2018 р.",
+        "type": "Житловий",
+        "title": "Реконструкція Гранд Готелю",
+        "address": "Львів, проспект Свободи, 13",
+        "img": "./assets/images/history/images/grand-hotel.jpg",
+        "labels": [
+          "Монтажні",
+          "Покрівельні",
+          "Бетонні",
+          "Мурувальні",
+          "Інженерні мережі",
+          "Оздоблювальні",
+          "Реконструкція",
+          "Здача в експлуатацію",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 50
+      },
+      {
+        "date": "2019-2021 р.",
+        "type": "Громадський",
+        "title": "Реконструкція ресторану Babo Gardens (колишня назва Тарон)",
+        "img": "./assets/images/history/images/restataunt-babo-gardens.jpg",
+        "address": "Львів, Кузневича, 16А",
+        "labels": [
+          "Бетонні",
+          "Мурувальні",
+          "Оздоблювальні",
+          "Монтажні",
+          "Покрівельні",
+          "Інженерні мережі",
+          "Реконструкція",
+          "Благоустрій"
+        ],
+        "className": "on-right",
+        mobileIndex: 80
+      },
+      {
+        "date": "2019-2021 р.",
+        "type": "Навчальний",
+        "title": "Приватний дитячий садок МрійДій",
+        "img": "./assets/images/history/images/mriy-diy-kindergarder.jpg",
+        "address": "Львів, вул. Угорська, 12Д",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Здача в експлуатацію",
+          "Пусконалагоджувальні"
+        ],
+        "className": "on-left",
+        mobileIndex: 100
+      },
+      
+      {
+        "date": "2021-2023 р.",
+        "type": "Медичний",
+        "title": "Лікарня Місце Сили медичного центру Святої Параскеви",
+        "address": "Львів, Смаль-Стоцького, 13",
+        "img": "./assets/images/history/images/misce-syly-hospital-centr-st-paraskevy.jpg",
+        "labels": [
+          "Підготовчі",
+          "Земляні",
+          "Монтажні",
+          "Бетонні",
+          "Мурувальні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі",
+          "Пусконалагоджувальні",
+          "Здача в експлуатацію"
+        ],
+        "className": "on-right",
+        mobileIndex: 120
+      },
+      {
+        "date": "2022-2023 р.",
+        "type": "Громадський",
+        "title": "Ресторан ТОЙ",
+        "address": "Львів, вул. Луганська, 20",
+        "img": "./assets/images/history/images/restaraunt-toy.jpg",
+        "labels": [
+          "Мурувальні",
+          "Підготовчі",
+          "Земляні",
+          "Бетонні",
+          "Монтажні",
+          "Покрівельні",
+          "Оздоблювальні",
+          "Благоустрій",
+          "Інженерні мережі"
+        ],
+        "className": "on-left",
+        mobileIndex: 140
+      },
+      
+      {
+        "date": "2024 р.",
+        "type": "меценатство",
+        "title": "Інформаційний центр на полі почесних поховань",
+        "address": "Львів, вул. Личаківська",
+        "labels": [
+          "Монтажні",
+          "Оздоблювальні",
+          "Інженерні мережі",
+          "Благоустрій"
+        ],
+        "className": "on-right",
+        mobileIndex: 160
+      }
+    ]
+
+    
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/history.bundle.js')
+block content
+  .inner-front-screen
+    .inner-front-screen__bg
+      img(src="./assets/images/history/bg.jpg", alt="", srcset="")
+    .inner-front-screen__content
+      include ../includes/breadcrumbs.pug
+      .inner-front-screen__title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1.color-white #{title_page}
+      +title-decor-inner-pages()
+  .history-content-wrapper.g_side_padding
+    .history-anim-line(data-anim-line)
+    .history-content
+      .history-content__period
+        .history-content__period-title
+          .history-content__period-title-top
+            .text-style-1920-h-1 #{title1.year1}
+            <svg width="223" height="38" preserveAspectRatio="xMaxYMid slice" viewBox="0 0 223 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M189 16.0918V21.9085H0V16.0918H189Z" fill="#0A0F13"/>
+              <path d="M223 19L204.309 38L200.187 33.9157L212 21.9071H189V16.0929H212L200.187 4.08427L204.309 0L223 19Z" fill="#0A0F13"/>
+            </svg>
+            .text-style-1920-h-1 #{title1.year2}
+          .text-style-1920-h-2 #{title1.description}
+        .history-content__list
+          .history-content__list-column1
+            each val in block1Column1
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+          .history-content__list-column2
+            each val in block1Column2
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+      .history-content__period
+        .history-content__period-title
+          .history-content__period-title-top
+            .text-style-1920-h-1 #{title2.year1}
+            <svg width="223" height="38" preserveAspectRatio="xMaxYMid slice" viewBox="0 0 223 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M189 16.0918V21.9085H0V16.0918H189Z" fill="#0A0F13"/>
+              <path d="M223 19L204.309 38L200.187 33.9157L212 21.9071H189V16.0929H212L200.187 4.08427L204.309 0L223 19Z" fill="#0A0F13"/>
+            </svg>
+            .text-style-1920-h-1 #{title2.year2}
+          .text-style-1920-h-2 #{title2.description}
+        .history-content__list
+          .history-content__list-column1
+            each val in block2Column1
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+          .history-content__list-column2
+            each val in block2Column2
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+      .history-content__period
+        .history-content__period-title
+          .history-content__period-title-top
+            .text-style-1920-h-1 #{title3.year1}
+            <svg width="223" height="38" preserveAspectRatio="xMaxYMid slice" viewBox="0 0 223 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M189 16.0918V21.9085H0V16.0918H189Z" fill="#0A0F13"/>
+              <path d="M223 19L204.309 38L200.187 33.9157L212 21.9071H189V16.0929H212L200.187 4.08427L204.309 0L223 19Z" fill="#0A0F13"/>
+            </svg>
+            .text-style-1920-h-1 #{title3.year2}
+          .text-style-1920-h-2 #{title3.description}
+        .history-content__list
+          .history-content__list-column1
+            each val in block3Column1
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+          .history-content__list-column2
+            each val in block3Column2
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+      .history-content__period
+        .history-content__period-title
+          .history-content__period-title-top
+            .text-style-1920-h-1 #{title4.year1}
+            <svg width="223" height="38" preserveAspectRatio="xMaxYMid slice" viewBox="0 0 223 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M189 16.0918V21.9085H0V16.0918H189Z" fill="#0A0F13"/>
+              <path d="M223 19L204.309 38L200.187 33.9157L212 21.9071H189V16.0929H212L200.187 4.08427L204.309 0L223 19Z" fill="#0A0F13"/>
+            </svg>
+            .text-style-1920-h-1 #{title4.year2}
+          .text-style-1920-h-2 #{title4.description}
+        .history-content__list
+          .history-content__list-column1
+            each val in block4Column1
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+          .history-content__list-column2
+            each val in block4Column2
+              .history-card(class=val.className data-mobile-index=val.mobileIndex)
+                .history-card__top-decor
+                  img(src="./assets/images/history/history-card-top.svg", alt="", srcset="")
+                .history-card__content
+                  .history-card__top
+                    .history-card__date #{val.date}
+                    if val.type
+                      .history-card__label.text-style-1920-buttons #{val.type}
+                  if val.img
+                    .history-card__image
+                      img(src=val.img, alt="", srcset="")
+                  .history-card__bottom
+                    .history-card__title.text-style-1920-h-3 #{val.title}
+                    if val.address
+                      .history-card__address #{val.address}
+                    if val.labels.length
+                      .history-card__list.text-style-1920-buttons
+                        .history-card__list-title Види робіт:
+                        each label in val.labels
+                          .history-card__list-item #{label}
+                .history-card__bottom-decor-wrapper
+                  .history-card__bottom-decor
+                    img(src="./assets/images/history/history-card-bottom.svg", alt="", srcset="")
+  include ../includes/contact-screen.pug
+  include ../includes/form-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

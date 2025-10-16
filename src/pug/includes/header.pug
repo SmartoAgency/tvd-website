@@ -1,0 +1,56 @@
+-
+    var links = [
+        {postfix: ',', label: 'ГОЛОВНА', href: '/'},
+        {postfix: ',', label: 'ДЕВЕЛОПЕР', href: '/#developer'},
+        {postfix: ',', label: 'ПРОЄКТИ', href: '/projects'},
+        {postfix: ',', label: 'ПЛАНУВАННЯ', href: '/plannings'},
+        {postfix: ',', label: 'НОВИНИ', href: '/news'},
+        {postfix: '', label: 'КОНТАКТИ', href: '#contact-screen' },
+    ]
+
+header(class="header "+header_class)
+    .header__left
+        a(href="/").header__logo
+            <svg width="97" height="39" viewBox="0 0 97 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.195179 5.30116V0.286609H30.1786V5.30116H18.1229V39H12.3029V5.30116H0.195179ZM35.7668 0.286609L46.5494 31.8029H46.9651L57.7477 0.286609H64.0354L50.1349 39H43.3796L29.4531 0.286609H35.7668ZM77.756 39H68.1946V33.8815H77.4183C80.3629 33.8815 82.8139 33.3359 84.7712 32.2446C86.7285 31.1361 88.1922 29.5165 89.1622 27.386C90.1322 25.2381 90.6172 22.6399 90.6172 19.5913C90.6172 16.5601 90.1322 13.9879 89.1622 11.8746C88.2095 9.76143 86.7805 8.1592 84.8751 7.06795C82.9698 5.95938 80.6054 5.40509 77.782 5.40509H67.9867V0.286609H78.1458C81.9392 0.286609 85.1956 1.05741 87.915 2.59902C90.6345 4.14063 92.7217 6.35777 94.1767 9.25045C95.6317 12.1258 96.3592 15.5728 96.3592 19.5913C96.3592 23.6272 95.6231 27.0915 94.1508 29.9842C92.6958 32.8769 90.5825 35.1027 87.8111 36.6616C85.0397 38.2205 81.688 39 77.756 39ZM71.0526 0.286609V39H65.2067V0.286609H71.0526Z" fill="#0A0F13"/>
+            </svg>
+    .header__right 
+        button(type="button" data-callback-popup-call data-menu-close).button.button--mimas
+            span Зворотній дзвінок
+        <div class="header-burger-wrap" data-menu-call>
+            <button class="header-burger"><span class="text-body text-white">Меню</span>
+                <div class="header-burger-lines">
+                    <svg class="header-burger-lines--open" width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="26" height="2"></rect>
+                        <rect y="7" width="26" height="2"></rect>
+                        <rect y="14" width="26" height="2"></rect>
+                    </svg>
+                    <svg class="header-burger-lines--close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 7L17 17M7 17L17 7" stroke="var(--color-black)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+
+.mobile-callback-popup(data-mobile-callback-popup) 
+    a.mobile-callback-popup__tel(href="tel:+380443563777") Виклик +380 (44) 356 37 77
+    .mobile-callback-popup__callback(data-callback-popup-call data-mobile-callback-close) Замовити зворотній дзвінок
+    .mobile-callback-popup__close(data-mobile-callback-close) Скасувати
+
+
+<template id="succes-form-popup-template">
+    <div data-success class="form__success">
+        .form__success-title.color-black.text-style-1920-h-2 Дякуємо за звернення!
+        .form__success-subtitle.color-black.text-style-1920-body Ми зв’яжемось з вами через декілька хвилин
+        <svg class="form__success-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <path d="M21.6811 68.9317L20.4505 70.9094L4 60.6913V25.2028L36.2429 45.5291L33.5012 49.9354M21.6811 68.9317L30.9788 75.0845M21.6811 68.9317L33.5012 49.9354M33.5012 49.9354C34.9269 50.8029 37.4493 52.451 39.4233 52.3411C41.3974 52.2312 44.4682 51.0226 45.3455 50.693C46.2229 50.3634 47.4292 50.2535 48.4163 51.1325C48.7886 51.4641 49.1268 51.7598 49.4033 51.999C49.7131 52.2671 49.9454 52.4641 50.0613 52.5608M50.0613 52.5608L44.7972 58.7136C44.1392 59.4827 43.2618 61.4604 45.0165 63.2184C47.2099 65.4158 49.6226 63.6578 50.7193 62.5591C51.5967 61.6802 52.9127 60.3617 53.4611 59.8123L69.9116 72.4476M50.0613 52.5608L59.7099 51.0229C59.7107 51.0228 59.7115 51.0227 59.7123 51.0226C60.809 50.9128 61.6863 50.8879 63.2217 51.999C64.7571 53.1102 65.7899 53.6346 68.7829 51.999M62.5638 73.8681L67.6745 78.0707C67.6909 78.0842 67.7074 78.0974 67.7239 78.1105M69.9062 72.4216L71.3381 73.5991C71.4407 73.6834 71.5359 73.7733 71.6238 73.8681M59.107 78.5088L64.2176 82.7114C65.4502 83.725 67.2694 83.5456 68.2811 82.3108C69.2928 81.076 69.1138 79.2534 67.8813 78.2398L67.7239 78.1105M66.4493 77.0623L67.7239 78.1105M67.7239 78.1105C68.9552 79.0793 70.7398 78.8885 71.738 77.6701C72.6655 76.538 72.5922 74.9118 71.6238 73.8681M62.1576 81.0175L63.5895 82.1951C64.822 83.2086 65.0011 85.0312 63.9894 86.266C62.9912 87.4844 61.2066 87.6752 59.9753 86.7064M51.158 86.9506L56.469 91.3074C57.7016 92.3209 59.5208 92.1415 60.5325 90.9068C61.5442 89.672 61.3652 87.8493 60.1327 86.8358L59.9753 86.7064M58.7007 85.6583L59.9753 86.7064M59.9753 86.7064C59.9588 86.6934 59.9423 86.6801 59.9259 86.6666L55.3276 82.8854M79.3189 68.9317L80.5495 70.9094L97 60.6913V25.2028L64.7571 45.5291L68.7829 51.999M79.3189 68.9317L71.6238 73.8681M79.3189 68.9317L68.7829 51.999M34.1592 30.1471L46.2229 42.2329L75.2854 13.117L69.1439 6.96417L46.2229 29.9273L40.3007 23.9942L34.1592 30.1471Z" stroke="#0A0F13"/>
+            <rect x="32.8359" y="71.9471" width="5.87698" height="8.89855" rx="2.93849" transform="rotate(33.322 32.8359 71.9471)" stroke="#0A0F13"/>
+            <rect x="39.4336" y="72.5906" width="5.87698" height="11.9799" rx="2.93849" transform="rotate(33.322 39.4336 72.5906)" stroke="#0A0F13"/>
+            <rect x="44.3359" y="75.8132" width="5.87698" height="11.9749" rx="2.93849" transform="rotate(33.322 44.3359 75.8132)" stroke="#0A0F13"/>
+            <rect x="47.5547" y="81.6021" width="5.87698" height="8.89855" rx="2.93849" transform="rotate(33.322 47.5547 81.6021)" stroke="#0A0F13"/>
+        </svg>
+        button(type="button" data-callback-popup-close class="button button--mimas" onclick="this.closest('form').classList.remove('success'); this.closest('[data-success]').remove()")
+            span(data-title="ЗАКРИТИ ПОВІДОМЛЕННЯ") ЗАКРИТИ ПОВІДОМЛЕННЯ
+    </div>
+</template>
