@@ -31,11 +31,9 @@
 
 	&.headroom--not-top {
 		// background-color: rgba(16, 24, 32, 0.90);
-		@include to(600px){
-			.header__logo {
-				
-				transform: translateY(-150%);
-			}
+		.header__logo {
+			transform: translateY(-150%);
+			
 		}
 	}
 

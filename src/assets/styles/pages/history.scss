@@ -85,6 +85,9 @@
                 align-items: center;
                 justify-content: space-between;
                 gap: 24px;
+                @include from-to(1025px, 1360px){
+                    gap: 16px;
+                }
                 @include to(1024px){
                     width: 100%;
                     gap: 20px;
@@ -104,6 +107,7 @@
                     height: auto;
                     @include from(1025px){
                         width: pxWidthInVw(203);
+                        height: 20px;
                     }
                     @include from-to(601px, 1024px){
                         flex-grow: 1;

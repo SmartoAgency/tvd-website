@@ -11,6 +11,7 @@ block variable
       title: 'Земляні, фундаментні та монолітні роботи',
       id: 'block3',
       img: './assets/images/services/service-block-callback-item1.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item1-mobile.jpg',
       items: [
         {
           numberSymbol: '➀',
@@ -37,6 +38,7 @@ block variable
     var block2 = {
       title: 'Інженерні мережі',
       img: './assets/images/services/service-block-callback-item2.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item2-mobile.jpg',
       id: 'block2',
       items: [
         {
@@ -75,6 +77,7 @@ block variable
       title: 'Оздоблювальні роботи:',
       id: 'block1',
       img: './assets/images/services/service-block-callback-item3.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item3-mobile.jpg',
       items: [
         {
           numberSymbol: '➀',
@@ -92,6 +95,7 @@ block variable
       title: 'Ремонт та реконструкція:',
       id: 'block4',
       img: './assets/images/services/service-block-callback-item4.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item4-mobile.jpg',
       items: [
         {
           numberSymbol: '➀',
@@ -108,6 +112,7 @@ block variable
     var block5 = {
       title: 'Будівництво «під ключ»',
       img: './assets/images/services/service-block-callback-item5.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item5-mobile.jpg',
       id: 'block6',
       items: [
         {
@@ -121,6 +126,7 @@ block variable
       title: 'Будівництво спеціалізованих об’єктів',
       id: 'block7',
       img: './assets/images/services/service-block-callback-item6.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item6-mobile.jpg',
       items: [
         {
           numberSymbol: '➀',
@@ -138,6 +144,7 @@ block variable
       title: 'Благоустрій та озеленення територій',
       id: 'block5',
       img: './assets/images/services/service-block-callback-item7.jpg',
+      imgMobile: './assets/images/services/service-block-callback-item7-mobile.jpg',
       items: [
         {
           numberSymbol: '➀',
@@ -160,7 +167,11 @@ block scripts
 block content
   .inner-front-screen
     .inner-front-screen__bg
-      img(src="./assets/images/services/bg.jpg", alt="", srcset="")
+      picture
+        source(srcset="./assets/images/services/bg.jpg" media="(min-width: 601px)")
+        source(srcset="./assets/images/services/bg-mobile.jpg" media="(max-width: 600px)")
+        img(class="services-block__callback-bg" src="#" alt="" loading="lazy")
+      //- img(src="./assets/images/services/bg.jpg", alt="", srcset="")
     .inner-front-screen__content
       include ../includes/breadcrumbs.pug
       .inner-front-screen__title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1.color-black #{title_page}
@@ -197,7 +208,10 @@ block content
                 </svg>
 
               .text-style-1920-h-2.color-white Замовити детальну консультацію спеціаліста
-              img(src=block.img, alt="").services-block__callback-bg
+              picture
+                  source(srcset=block.img media="(min-width: 601px)")
+                  source(srcset=block.imgMobile media="(max-width: 600px)")
+                  img(class="services-block__callback-bg" src="#" alt="" loading="lazy")
   include ../includes/contact-screen.pug
   include ../includes/form-screen.pug
 block footer

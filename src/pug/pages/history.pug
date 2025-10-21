@@ -656,7 +656,11 @@ block scripts
 block content
   .inner-front-screen
     .inner-front-screen__bg
-      img(src="./assets/images/history/bg.jpg", alt="", srcset="")
+      //- img(src="./assets/images/history/bg.jpg", alt="", srcset="")
+      picture
+        source(srcset="./assets/images/history/bg.jpg" media="(min-width: 601px)")
+        source(srcset="./assets/images/history/bg-mobile.jpg" media="(max-width: 600px)")
+        img(src="#" alt="" loading="lazy")
     .inner-front-screen__content
       include ../includes/breadcrumbs.pug
       .inner-front-screen__title.text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1.color-white #{title_page}
