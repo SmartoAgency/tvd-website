@@ -10,7 +10,6 @@
     @for $i from 1 through 8 {
         .services-block:nth-child(#{$i}) {
             top: #{$i * 8}px;
-            z-index: $i;
         }
     }
     @include to(600px){

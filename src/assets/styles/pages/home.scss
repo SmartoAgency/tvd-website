@@ -172,7 +172,7 @@
         width: 50%;
         margin-left: 50%;
         @include from(1025px){
-            margin-bottom: 120px;
+            margin-bottom: pxInVh(120);
         }
         @include to(600px){
             width: 100%;
@@ -243,7 +243,7 @@
         svg {
             width: 80px;
             @include from(1025px){
-                width: pxWidthInVw(180);
+                width: 12.675vw;
             }
         }
         &>:first-child {
