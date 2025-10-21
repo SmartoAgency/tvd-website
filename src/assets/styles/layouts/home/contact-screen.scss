@@ -206,6 +206,25 @@
             -webkit-animation: wobble 1.5s ease-in-out infinite;
             animation: wobble 1.5s ease-in-out infinite
         }
+        &__phone-link>div:nth-child(2) {
+            position: relative;
+        }
+        &__phone-link>div:nth-child(2):after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-black);
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .25s ease-in-out;
+        }
+        &__phone-link:hover>div:nth-child(2):after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
     }
     &__adress {
         text-decoration: none;

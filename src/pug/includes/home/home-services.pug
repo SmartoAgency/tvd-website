@@ -1,12 +1,61 @@
 -
   var services = [
-      { number: "➊", icon: "Clover-light.svg", additionalClass: "top-light", img: './assets/images/home/home-services/ozdobluvalni-roboty.jpg', title: 'Оздоблювальні роботи'} ,
-      { number: "➌", icon: "Clover2.svg", additionalClass: "light-item top-light", img: './assets/images/home/home-services/inzhenerni-merezhi.jpg', title: 'Інженерні мережі'} ,
-      { number: "➋", icon: "Star2-white.svg", additionalClass: "light-item top-light", img: './assets/images/home/home-services/zemlyani-fundament-roboty.jpg', title: 'Земляні, фундаментні та монолітні роботи'} ,
-      { number: "➏", icon: "Star.svg", additionalClass: "", img: './assets/images/home/home-services/remont-ta-reconstructia.jpg', title: 'Ремонт та реконструкція'} ,
-      { number: "➍", icon: "Star2-white.svg", additionalClass: "light-item top-light", img: './assets/images/home/home-services/blagoustriy-ta-ozelenenya.jpg', title: 'Благоустрій та озеленення територій'} ,
-      { number: "➎", icon: "Clover.svg", additionalClass: "light-item top-dark", img: './assets/images/home/home-services/budivnyctvo-pid-kliuch.jpg', title: 'Будівництво «під ключ» '} ,
-      { number: "➐", icon: "Clover-dark-rotated.svg", additionalClass: "light-item top-dark", img: './assets/images/home/home-services/budivnyctvo-spec-objectiv.jpg', title: 'Будівництво спеціалізованих об’єктів'} ,
+      { 
+        url:"/services#block1", 
+        number: "➊", 
+        icon: "Clover-light.svg", 
+        additionalClass: "top-light", 
+        img: './assets/images/home/home-services/ozdobluvalni-roboty.jpg', 
+        title: 'Оздоблювальні роботи'
+    } ,
+      { 
+        url:"/services#block2", 
+        number: "➌", 
+        icon: "Clover2.svg", 
+        additionalClass: "light-item top-light", 
+        img: './assets/images/home/home-services/inzhenerni-merezhi.jpg', 
+        title: 'Інженерні мережі'
+    } ,
+      { 
+        url:"/services#block3", 
+        number: "➋", 
+        icon: "Star2-white.svg", 
+        additionalClass: "light-item top-light", 
+        img: './assets/images/home/home-services/zemlyani-fundament-roboty.jpg', 
+        title: 'Земляні, фундаментні та монолітні роботи'
+    } ,
+      { 
+        url:"/services#block4", 
+        number: "➏", 
+        icon: "Star.svg", 
+        additionalClass: "", 
+        img: './assets/images/home/home-services/remont-ta-reconstructia.jpg', 
+        title: 'Ремонт та реконструкція'
+    } ,
+      { 
+        url:"/services#block5", 
+        number: "➍", 
+        icon: "Star2-white.svg", 
+        additionalClass: "light-item top-light", 
+        img: './assets/images/home/home-services/blagoustriy-ta-ozelenenya.jpg', 
+        title: 'Благоустрій та озеленення територій'
+    } ,
+      { 
+        url:"/services#block6", 
+        number: "➎", 
+        icon: "Clover.svg", 
+        additionalClass: "light-item top-dark", 
+        img: './assets/images/home/home-services/budivnyctvo-pid-kliuch.jpg', 
+        title: 'Будівництво «під ключ» '
+    } ,
+      { 
+        url:"/services#block7", 
+        number: "➐", 
+        icon: "Clover-dark-rotated.svg", 
+        additionalClass: "light-item top-dark", 
+        img: './assets/images/home/home-services/budivnyctvo-spec-objectiv.jpg', 
+        title: 'Будівництво спеціалізованих об’єктів'
+    } ,
   ]
 
 .home-services.g_side_padding
@@ -15,7 +64,7 @@
     .home-services__title.text-style-1920-h-1.text-style-375-h-1 Послуги
     .home-services__grid
       each service, index in services
-        div(class=`home-services__item ${service.additionalClass}` data-home-services-item)
+        a(href=service.url class=`home-services__item ${service.additionalClass}` data-home-services-item)
           .home-services__item-cover
           .home-services__item-img-wrapper
             img(src=service.img, alt="", loading="lazy", srcset="")

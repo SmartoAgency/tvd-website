@@ -41,7 +41,7 @@
         position: absolute;
         left: 0;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: var(--color-black);
         transition: transform 0.725s var(--animation-primary);
         transform-origin: left;
@@ -54,7 +54,7 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: var(--color-black);
         transition: transform 0.725s var(--animation-primary);
         transform-origin: right;

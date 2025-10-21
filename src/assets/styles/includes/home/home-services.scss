@@ -6,11 +6,11 @@
         --gap: 20px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, calc(var(--vh, 1vh) * 50 - var(--header-h) - var(--gap)));
+        grid-template-rows: repeat(4, calc(var(--vh, 1vh) * 50 - var(--gap)));
         gap: var(--gap);
         @include from-to(600px, 1023px){
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(6, calc(var(--vh, 1vh) * 50 - var(--header-h) - var(--gap)));
+            grid-template-rows: repeat(6, calc(var(--vh, 1vh) * 50  - var(--gap)));
         }
         @include to(600px){
             display: flex;
@@ -20,6 +20,8 @@
     &__item {
         position: relative;
         overflow: hidden;
+        text-decoration: none;
+        color: var(--color-black);
         &.light-item {
             color: var(--color-white);
         }

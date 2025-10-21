@@ -507,6 +507,7 @@
             left: calc(var(--padding) * 2);
             top: calc(var(--padding) * 2);
             z-index: 2;
+            line-height: 160%;
         }
         &-text {
             padding: var(--padding);
@@ -519,6 +520,7 @@
         }
         &-img-wrap {
             width: 100%;
+            overflow: hidden;
         }
         &-img {
             position: relative;
@@ -533,6 +535,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: transform 0.3s ease-in-out;
                 @include to(1024px){
                     height: 65%;
                 }
@@ -541,6 +544,9 @@
                 }
             }
         }
+    }
+    &__item:hover &__item-img-wrap img {
+        transform: translateY(-20px);
     }
     &__item:hover &__item-text-wrap {
         transform: translateY(0);
@@ -675,6 +681,9 @@
     }
     &__text {
         margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         @include from(1025px){
             margin-left: auto;
             width: 48.8%;

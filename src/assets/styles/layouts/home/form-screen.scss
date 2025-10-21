@@ -126,6 +126,11 @@
             padding-bottom: 164px;
         }
         .form {
+            &.success {
+                &>*:not(.form__success){
+                    opacity: 0;
+                }
+            }
             @include from(1025px){
                 max-width: 440px;
             }

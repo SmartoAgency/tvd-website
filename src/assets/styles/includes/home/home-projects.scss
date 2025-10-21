@@ -34,10 +34,12 @@
         margin-right: calc(var(--page-side-fields) * -1);
         padding-left: var(--page-side-fields);
         padding-right: var(--page-side-fields);
-        cursor: grab;
-        user-select: text;
-        &:active {
-            cursor: grabbing;
+        .swiper-slide {
+            cursor: grab;
+            user-select: text;
+            &:active {
+                cursor: grabbing;
+            }
         }
     }
     &__slide {

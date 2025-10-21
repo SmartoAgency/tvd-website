@@ -86,9 +86,11 @@
         &-title {
             width: 50%;
             padding-right: 10%;
+            align-self: flex-start;
             @include to(600px){
                 width: 100%;
-                @include text-style-375-h-2;margin-top: 20px;
+                @include text-style-375-h-2;
+                margin-top: 20px;
             }
         }
     }
@@ -169,6 +171,9 @@
     &__list {
         width: 50%;
         margin-left: 50%;
+        @include from(1025px){
+            margin-bottom: 120px;
+        }
         @include to(600px){
             width: 100%;
             margin-left: initial;
@@ -237,6 +242,9 @@
         }
         svg {
             width: 80px;
+            @include from(1025px){
+                width: pxWidthInVw(180);
+            }
         }
         &>:first-child {
             flex-basis: 100%;

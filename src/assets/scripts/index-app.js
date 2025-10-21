@@ -120,18 +120,36 @@ useSetMenuEffect(val => {
 
     const tl = gsap.timeline({
         paused: true,
-    })
-    .fromTo('.menu__link', {
-        autoAlpha: 0,
-        x: 50,
-    }, {
-        autoAlpha: 1,
-        x: 0,
-        duration: 1.38,
-        ease: "power4.out",
-        clearProps: 'all',
-        stagger: 0.1,
-    })
+    });
+
+
+    if (val) {
+
+        tl.fromTo('.menu__link', {
+            autoAlpha: 0,
+            x: 50,
+        }, {
+            autoAlpha: 1,
+            x: 0,
+            duration: 1.38,
+            ease: "power4.out",
+            clearProps: 'all',
+            stagger: 0.1,
+        })
+    } else {
+        tl.fromTo('.menu__link', {
+            autoAlpha: 1,
+            x: 0,
+        }, {
+            autoAlpha: 0,
+            x: 50,
+            duration: 1.38,
+            ease: "power4.out",
+            clearProps: 'all',
+            stagger: 0.1,
+        })
+        
+    }
     if (val) {
         const vh = window.innerHeight * 0.01;
         menu.classList.add('active', val);
@@ -151,8 +169,11 @@ useSetMenuEffect(val => {
         }, {
             once: true
         });
+        tl.play();
+        setTimeout(() => {
+            menu.classList.add('closing');
+        }, 150);
 
-        menu.classList.add('closing');
 
     }
 
@@ -295,6 +316,7 @@ function pageLoaderAnimation() {
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
         duration: 1.5,
         ease: "power4.out",
+        clearProps: 'all',
     }, '<')
     tl.fromTo('.header>*', {
         autoAlpha: 0,

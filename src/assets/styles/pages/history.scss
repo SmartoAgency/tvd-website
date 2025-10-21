@@ -26,6 +26,9 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: pxWidthInVw(40);
         width: calc(60% - pxWidthInVw(160) / 2);
+        @include from(1025px){
+            perspective: 0px;
+        }
         @include to(1024px){
             width: 100%;
             grid-template-columns: 1fr;

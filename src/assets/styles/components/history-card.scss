@@ -4,12 +4,12 @@
     position: relative;
     &.on-left {
         @include from(1025px){
-            transform: rotate(-3deg);
+            transform: rotateZ(-3deg);
         }
     }
     &.on-right {
         @include from(1025px){
-            transform: rotate(3deg);
+            transform: rotateZ(3deg);
         }
 
     }

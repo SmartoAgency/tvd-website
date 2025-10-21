@@ -33,7 +33,9 @@
         margin-top: 16px;
         margin-left: 0;
         margin-right: 0;
-        color: var(--color-black);
+        background-color: var(--color-black);
+        border: none;
+        height: 1px;
     }
     &__title {
         @include text-style-1920-h-2;

@@ -52,9 +52,13 @@
         }
         &-month {
             margin-left: auto;
+            @include text-style-1920-buttons;
         }
         @include to(600px){
             color: var(--color-gray-light);
+            @include text-style-1920-buttons;
+        }
+        &>:nth-last-child(2) {
             @include text-style-1920-buttons;
         }
     }
@@ -143,8 +147,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include text-style-1920-buttons;
             @include to(1024px){
-                @include text-style-1920-buttons;
             }
             @include to(600px){
                 flex-direction: row-reverse;

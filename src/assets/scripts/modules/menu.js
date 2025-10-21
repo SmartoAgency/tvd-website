@@ -49,13 +49,13 @@ const closeMenuTl = gsap.timeline({
         pointerEvents: 'all',
         visibility: 'visible'
       })
-      .fromTo('.menu__item--1', {
-        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
-      }, {
-        clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-        ease: 'Expo.easeOut',
-        duration: 1.25
-      })
+      // .fromTo('.menu__item--1', {
+      //   clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+      // }, {
+      //   clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      //   ease: 'Expo.easeOut',
+      //   duration: 1.25
+      // })
       .set('.header', {
         autoAlpha: 0
       }, '<')
@@ -88,7 +88,7 @@ document.body.addEventListener('click',function(evt){
   const target = evt.target.closest('[data-menu-close]');
 
   if (!target) return;
-  closeMenuTl.timeScale(1.5).progress(0).play();
+  closeMenuTl.progress(0).play();
 
 });
 }

@@ -9,6 +9,7 @@ block variable
     ]
     var block1 = {
       title: 'Земляні, фундаментні та монолітні роботи',
+      id: 'block3',
       img: './assets/images/services/service-block-callback-item1.jpg',
       items: [
         {
@@ -36,6 +37,7 @@ block variable
     var block2 = {
       title: 'Інженерні мережі',
       img: './assets/images/services/service-block-callback-item2.jpg',
+      id: 'block2',
       items: [
         {
           numberSymbol: '➀',
@@ -71,6 +73,7 @@ block variable
     }
     var block3 = {
       title: 'Оздоблювальні роботи:',
+      id: 'block1',
       img: './assets/images/services/service-block-callback-item3.jpg',
       items: [
         {
@@ -87,6 +90,7 @@ block variable
     } 
     var block4 = {
       title: 'Ремонт та реконструкція:',
+      id: 'block4',
       img: './assets/images/services/service-block-callback-item4.jpg',
       items: [
         {
@@ -104,6 +108,7 @@ block variable
     var block5 = {
       title: 'Будівництво «під ключ»',
       img: './assets/images/services/service-block-callback-item5.jpg',
+      id: 'block6',
       items: [
         {
           numberSymbol: '',
@@ -114,6 +119,7 @@ block variable
     }
     var block6 = {
       title: 'Будівництво спеціалізованих об’єктів',
+      id: 'block7',
       img: './assets/images/services/service-block-callback-item6.jpg',
       items: [
         {
@@ -130,6 +136,7 @@ block variable
     }
     var block7 = {
       title: 'Благоустрій та озеленення територій',
+      id: 'block5',
       img: './assets/images/services/service-block-callback-item7.jpg',
       items: [
         {
@@ -160,7 +167,7 @@ block content
       +title-decor-inner-pages()
   .services-container
     each block in total
-      .services-block
+      .services-block(id=block.id)
         .services-block__content
           .services-block__left
             .services-block__title-wrapper
