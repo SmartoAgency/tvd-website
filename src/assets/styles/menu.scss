@@ -14,7 +14,7 @@
     overscroll-behavior: none;
     @include to(600px){
         height: calc(var(--vh, 1vh) * 100);
-        padding-top: calc(var(--header-h) + 20px);
+        padding-top: calc(var(--header-h));
     }
     &.active {
         opacity: 1;
@@ -74,6 +74,7 @@
         justify-content: center;
         @include to(600px){
             justify-content: flex-start;
+
         }
         padding-top: 28px;
         @include to(1024px){
@@ -85,6 +86,7 @@
             padding-left: var(--page-side-fields);
             padding-right: var(--page-side-fields);
             padding-top: 28px;
+            padding-top:    8px;
 
         }
     }

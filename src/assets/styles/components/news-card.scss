@@ -35,6 +35,8 @@
             margin-top: 20px;
             @include to(600px){
                 color: var(--color-black);
+                @include text-style-1920-body;
+                padding-right: 0;
             }
         }
         &-number {

@@ -31,8 +31,22 @@
 
 	&.headroom--not-top {
 		// background-color: rgba(16, 24, 32, 0.90);
+		@include to(600px){
+			.header__logo {
+				
+				transform: translateY(-150%);
+			}
+		}
 	}
+
+	@at-root .popup-open .header__logo {
+		transform: none !important;
+	}
+
 	&__logo {
+		@include to(600px){
+			transition: .25s ease-in-out;
+		}
 		svg {
 			width: auto;
 			height: 40px;
@@ -149,7 +163,7 @@
 	&-burger {
 		display: flex;
 		align-items: center;
-		gap: 0.625vw;
+		gap: 4px;
 		text-transform: uppercase;
 		@include text-style-1920-buttons;
 		color: var(--color-black);
@@ -187,6 +201,9 @@
 		justify-content: center;
 		width: 32px;
 		height: 32px;
+		@include to(600px){
+			transform: scale(2.3);
+		}
 	}
 
 	&-burger-lines--open {
@@ -250,6 +267,9 @@
 			@include to(1024px){
 				width: 24px;
 				height: 24px;
+			}
+			@include to(600px){
+				transform: scale(0.6);
 			}
 		}
 	}
