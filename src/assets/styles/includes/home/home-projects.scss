@@ -34,9 +34,21 @@
         margin-right: calc(var(--page-side-fields) * -1);
         padding-left: var(--page-side-fields);
         padding-right: var(--page-side-fields);
+        user-select: text;
         .swiper-slide {
             cursor: grab;
-            user-select: text;
+            user-select: none;
+            overflow: visible;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 34vw;
+                width: 100%;
+                background-color: rebeccapurple;
+                opacity: 0;
+            }
             &:active {
                 cursor: grabbing;
             }

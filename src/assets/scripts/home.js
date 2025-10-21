@@ -103,6 +103,8 @@ function homeProjectsSlider() {
     const slider = new Swiper('[data-home-projects-slider]', {
         slidesPerView: 4.3,
         spaceBetween: 20,
+        simulateTouch: true,
+        draggable: true,
         navigation: {
             nextEl: '[data-home-projects-slider-next]',
             prevEl: '[data-home-projects-slider-prev]',
