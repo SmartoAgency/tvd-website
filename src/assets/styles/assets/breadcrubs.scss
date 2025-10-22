@@ -32,8 +32,8 @@
   &-item {
     display: flex;
     align-items: center;
+    @include text-style-1920-buttons;
     @include to(1024px){
-      @include text-style-1920-buttons;
     }
     &__link {
       position: relative;

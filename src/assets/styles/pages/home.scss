@@ -184,6 +184,9 @@
             border-bottom: 1px solid rgba(#0A0F13, 0.1);
             display: flex;
             align-items: center;
+            @include from(1025px){
+                padding-bottom: pxWidthInVw(20);
+            }
             @include to(600px){
                 padding-bottom: 8px;
             }
@@ -231,6 +234,12 @@
         margin-right: auto;
         flex-wrap: wrap;
         align-self: flex-end;
+        @include from(1025px){
+            position: absolute;
+            left: var(--page-side-fields);
+            bottom: var(--page-side-fields);
+            column-gap: pxWidthInVw(24);
+        }
         @media screen and (max-width: 1024px){
             width: 100%;
             column-gap: 40px;
@@ -243,7 +252,7 @@
         svg {
             width: 80px;
             @include from(1025px){
-                width: 12.675vw;
+                width: 10.975vw;
             }
             @include to(600px){
                 width: 20vw;

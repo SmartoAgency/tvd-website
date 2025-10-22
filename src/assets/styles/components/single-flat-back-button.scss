@@ -4,6 +4,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    @include text-style-1920-buttons;
     &--light {
         color: var(--color-white);
     }
