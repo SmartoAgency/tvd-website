@@ -25,6 +25,8 @@
         flex-wrap: wrap;
         @include from(1025px){
             height: 100%;
+            align-items: flex-start;
+            align-content: flex-start;
         }
         @include to(1024px){
             width: 100%;
@@ -63,6 +65,9 @@
             margin-top: calc(var(--round-image-size) * -0.3);
             position: relative;
             z-index: 2;
+            @include from(1025px){
+                    margin-bottom: 60px;
+            }
             @media screen and (max-width:1024px){
                 margin-top: calc(var(--round-image-size) * -0.7);
             }
