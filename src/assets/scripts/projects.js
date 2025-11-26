@@ -23,12 +23,13 @@ async function planningsGallery() {
 
     const fetchedFlats = await getFlats();
 
-    console.log('fetchedFlats:', fetchedFlats);
+    // console.log('fetchedFlats:', fetchedFlats);
 
     fetchedFlats.forEach((flat, index) => {
-        flat.deadline = flat.acf.block.card.dd;
-        flat._deadline = flat.acf.block.card.deadline;
-        flat.buildclass = flat.acf.block.card.class;
+        flat.deadline = flat.acf.block.year;
+        flat._deadline = flat.acf.block.year;
+        flat._view = flat.acf.block.view;
+        flat.view = flat.acf.block.view;
         flat.id = index;
     })
     // return;
@@ -37,6 +38,8 @@ async function planningsGallery() {
         acc[flat.id] = flat;
         return acc;
     }, {});   
+
+    window.tvd_flats = flats;
 
 
     let paginationData = [];
@@ -180,8 +183,7 @@ async function planningsGallery() {
             },
 
             types: {
-                _deadline: 'checkbox',
-                buildclass: 'checkbox',
+                _view: 'checkbox'
             }
         },
     );
@@ -232,7 +234,10 @@ async function planningsGallery() {
 
 async function getFlats() {
     const isDev =  window.location.href.match(/localhost|verstka|192/);
-    const url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=4&_embed=1&per_page=100&order=desc';
+    let url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=4&_embed=1&per_page=100&order=desc';
+    if (document.documentElement.dataset.projects_api_url) {
+        url = document.documentElement.dataset.projects_api_url;
+    }
 
     const response = await fetch(url, {
         method: 'GET',
@@ -244,13 +249,9 @@ async function getFlats() {
 
 function getProjectCard(data) {
 
-    const eoselya = data.acf.block.card.ehata;
-    const deadline = data.acf.block.card.dd;
-    const labels = get(data, 'acf.block.card.fast_info', []);
+    const deadline = data.acf.block.year;
     const title = data.title.rendered;
-    const adress = get(data, 'acf.block.screen_1.row_1', false);
     const link = data.link;
-    const logo = get(data, 'acf.block.screen_1.logo', false);
 
     const img = get(data, '_embedded["wp:featuredmedia"][0].source_url', false);
 
@@ -308,4 +309,11 @@ document.body.addEventListener('change', function handleUIOfFilterButtons(e) {
     if (!target) return;
     const label = target.closest('label');
     label.classList.toggle('active', target.checked);
+})
+
+document.querySelector('#resetFilter').addEventListener('click', function handleResetFilterButton(e) {
+    document.querySelectorAll('.projects-filter__button input[type="checkbox"]').forEach((el) => {
+        el.checked = false;
+        el.closest('label').classList.remove('active');
+    });
 })

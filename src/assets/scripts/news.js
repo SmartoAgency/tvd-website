@@ -228,7 +228,11 @@ async function planningsGallery() {
 
 async function getFlats() {
     const isDev =  window.location.href.match(/localhost|verstka|192/);
-    const url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=2&_embed=1&per_page=100';
+    let url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=3&_embed=1&per_page=100';
+    if (document.documentElement.dataset.news_api_url) {
+        url = document.documentElement.dataset.news_api_url;
+    }
+
 
     const response = await fetch(url, {
         method: 'GET',
@@ -238,34 +242,57 @@ async function getFlats() {
 }
 
 
+const monthNames = {
+    uk: {
+        1: 'Січень',
+        2: 'Лютотий',
+        3: 'Березень',
+        4: 'Квітень',
+        5: 'Травень',
+        6: 'Червень',
+        7: 'Липень',
+        8: 'Серпень',
+        9: 'Вересень',
+        10: 'Жовтень',
+        11: 'Листопад',
+        12: 'Грудень',
+    }, 
+    en: {
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
+        8: 'August',
+        9: 'September',
+        10: 'October',
+        11: 'November',
+        12: 'December',
+    }
+}
+
 function getProjectCard(data) {
 
     const title = data.title.rendered;
-    const date = get(data, 'acf.block.card.d', false);
-    const label = get(data, 'acf.block.card.row_1', false);
+    const date = get(data, 'acf.block.d', false);
     const link = data.link;
     const img = get(data, '_embedded["wp:featuredmedia"][0].source_url', false);
 
+    const [ day, month, year ] = date ? date.split('.') : [ '', '', '' ];
+    const lang = document.documentElement.lang || 'uk';
+    const monthName = monthNames[lang] ? monthNames[lang][Number(month)] : month;
+
     return `
-        <a class="news-card" href="${link}">
-            <div class="news-card__img">
-                <div class="news-card__date">${date}</div>
-                <div class="news-card__label">${label}</div>
-                <div class="news-card__img-wrapper">
-                    <img src="${img}" alt="news-1">
-                </div>
+        <a class="news-card2" href="${link}">
+            <div class="news-card2__img">
+                <div class="news-card2__img-wrapper"><img src="${img}" alt="news-1" loading="lazy"></div>
             </div>
-            <div class="news-card__text">
-                <div class="text-style-1920-h-4 text-style-768-h-4">
-                    ${title}
-                </div>
-                <div class="diagonal-arrow undefined"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <path d="M29.092 28.2217L28.6569 17.3431M28.6569 17.3431L17.7783 16.908M28.6569 17.3431L17.3432 28.6569" stroke="#DBE2EA" stroke-width="2" />
-                            <path transform="translate(-46, 46)" d="M29.092 28.2217L28.6569 17.3431M28.6569 17.3431L17.7783 16.908M28.6569 17.3431L17.3432 28.6569" stroke="#DBE2EA" stroke-width="2" />
-                        </g>
-                    </svg>
-                </div>
+            <div class="news-card2__text">
+                <div class="news-card2__text-title">${title}</div>
+                <div class="news-card2__text-number text-style-1920-h-1">${day}</div>
+                <div class="news-card2__text-date color-gray-light"> <span>${monthName}</span><span>${year}</span></div>
             </div>
         </a>
     `

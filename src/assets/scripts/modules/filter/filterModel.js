@@ -512,7 +512,7 @@ class FilterModel extends EventEmitter {
   }
 
   checkСheckboxParam(flat, key, value) {
-    return value.value.reduce((acc, name) => acc || flat[key] == name, false) || size(value.value) === 0;
+    return value.value.reduce((acc, name) => acc || flat[key].toLowerCase() == name.toLowerCase(), false) || size(value.value) === 0;
   }
 
   checkOptionParam(flat, key, value) {
