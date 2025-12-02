@@ -36,8 +36,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include from(1025px){
+            gap: 8px;
+        }
     }
     &__date {
+        @include from(1025px){
+            white-space: nowrap;
+        }
         @include to(600px){
             @include text-style-1920-buttons;
         }

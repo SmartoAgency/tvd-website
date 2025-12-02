@@ -172,6 +172,16 @@
         img {
             width: 100%;
             height: 100%;
+            object-fit: contain;
+        }
+        img:last-child {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(20px);
             object-fit: cover;
         }
     }
@@ -336,7 +346,7 @@
         @include size-xs(12);
         @include shift-xs(0);
         @include from(1025px){
-            @include shift-padding-right(3);
+            @include shift-padding-right(1);
         }
         display: flex;
         flex-direction: column;

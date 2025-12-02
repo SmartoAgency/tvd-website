@@ -74,6 +74,20 @@ async function planningsGallery() {
     currentFilteredFlatIds$.subscribe((ids) => {
         
         const idsSortedByIds = ids.sort((a, b) => {
+
+            let date1 = flats[a].deadline.replace(/\+/g, '');
+            let date2 = flats[b].deadline.replace(/\+/g, '');
+            
+            if (/\-/.test(date1)) {
+                date1 = date1.split('-')[1];
+            }
+
+            if (/\-/.test(date2)) {
+                date2 = date2.split('-')[1];
+            }           
+
+            return (+date1 - +date2 > 0) ? -1 : 1;
+
             return +a - +b > 0 ? 1 : -1;
         });
         paginationData = preparePgination(idsSortedByIds).portionedFlats;
