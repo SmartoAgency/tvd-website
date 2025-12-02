@@ -267,7 +267,7 @@ function getProjectCard(data) {
     const title = data.title.rendered;
     const link = data.link;
 
-    const img = get(data, '_embedded["wp:featuredmedia"][0].source_url', false);
+    const img = get(data, '_embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url', false);
 
     return `
         <a class="project-card" href="${link}">
