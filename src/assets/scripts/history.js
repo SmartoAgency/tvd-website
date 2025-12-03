@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 
 
-function shuffleCardForMobile() {
-    if (window.screen.width > 1024) return;
-    const periods = document.querySelectorAll('.history-content__period');
-    periods.forEach((period) => {
-        const columnToPut = period.querySelector('.history-content__list-column1');
-        const cards = Array.from(period.querySelectorAll('[data-mobile-index]')).sort((a, b) => {
-            return parseInt(a.getAttribute('data-mobile-index'), 10) - parseInt(b.getAttribute('data-mobile-index'), 10);
-        });
+// function shuffleCardForMobile() {
+//     if (window.screen.width > 1024) return;
+//     const periods = document.querySelectorAll('.history-content__period');
+//     periods.forEach((period) => {
+//         const columnToPut = period.querySelector('.history-content__list-column1');
+//         const cards = Array.from(period.querySelectorAll('[data-mobile-index]')).sort((a, b) => {
+//             return parseInt(a.getAttribute('data-mobile-index'), 10) - parseInt(b.getAttribute('data-mobile-index'), 10);
+//         });
 
-        cards.forEach((card) => {
-            columnToPut.insertAdjacentElement('beforeend', card);
-        });
+//         cards.forEach((card) => {
+//             columnToPut.insertAdjacentElement('beforeend', card);
+//         });
 
-    })
-}
+//     })
+// }
 
-shuffleCardForMobile();
+// shuffleCardForMobile();
 
 console.log('History page script loaded');
 
@@ -31,6 +31,7 @@ function initHistoryCardsAnimation() {
     const DOTS_INTERVAL = 300;
     const SVG_WIDTH = 40;
     const animLineContainer = document.querySelector('[data-anim-line]');
+    animLineContainer.innerHTML = '';
     const height = animLineContainer.offsetHeight;
     
     console.log('Height of anim line container:', height);
@@ -140,5 +141,8 @@ function initHistoryCardsAnimation() {
 
 
 window.addEventListener('load', () => {
+    initHistoryCardsAnimation();
+});
+window.addEventListener('history_cards_rendered', () => {
     initHistoryCardsAnimation();
 });
