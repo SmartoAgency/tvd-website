@@ -40,10 +40,17 @@ function frontScreenSlider() {
     });
 
     slider.on('slideChange', function () {
-        document.querySelectorAll('[data-front-screen-slider-line]').forEach((el) => {
+        console.log('slide CHANGE', slider.realIndex);
+        
+        document.querySelectorAll('[data-front-screen-slider-line]').forEach((el,index) => {
             el.classList.remove('active');
+
             const lineIndex = parseInt(el.getAttribute('data-front-screen-slider-line'), 10);
-            if (lineIndex === slider.realIndex) {
+            if (index > slider.realIndex) {
+                el.classList.remove('active');
+            }
+            el.classList.toggle('no-animation', index < slider.realIndex);
+            if (slider.realIndex === lineIndex) {
                 el.classList.add('active');
             }
         });
@@ -55,6 +62,8 @@ function frontScreenSlider() {
             slider.slideToLoop(lineIndex);
         });
     });
+
+    document.querySelector('[data-front-screen-slider-line]').classList.add('active');
 }
 frontScreenSlider();
 

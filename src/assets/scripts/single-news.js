@@ -3,7 +3,7 @@ import Swiper, { Navigation } from 'swiper';
 gsap.registerPlugin(ScrollTrigger);
 
 
-document.querySelector('[data-gallery="all"]').textContent = padNumber(document.querySelectorAll('[data-single-construction-slider] .swiper-slide').length);
+// document.querySelector('[data-gallery="all"]').textContent = padNumber(document.querySelectorAll('[data-single-construction-slider] .swiper-slide').length);
 
 const slider = new Swiper('[data-single-construction-slider]', {
     modules: [Navigation],

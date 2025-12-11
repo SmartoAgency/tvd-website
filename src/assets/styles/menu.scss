@@ -128,6 +128,7 @@
         }
         &-number {
             font-size: 20px;
+            margin-left: 0.5ch;
             @include to(600px){
                 margin-left: auto;
             }

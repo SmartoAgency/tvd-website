@@ -42,6 +42,10 @@
             z-index: 3;
             mix-blend-mode: exclusion;
             color: var(--color-white);
+            @include from(1025px){
+                padding-top: pxWidthInVw(60);
+                padding-bottom: pxWidthInVw(60);
+            }
             @include to(600px){
                 padding-top: 0;
                 padding-bottom: 0;
@@ -49,7 +53,8 @@
             &>:last-child {
                 margin-left: auto;
                 @include from(1025px){
-                    margin-right: var(--image-offset);
+                    // margin-right: var(--image-offset);
+                    margin-right: calc(var(--image-offset) * 1.55);
                 }
             }
         }
