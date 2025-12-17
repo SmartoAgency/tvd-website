@@ -69,7 +69,13 @@ async function planningsGallery() {
     currentFilteredFlatIds$.subscribe((ids) => {
         
         const idsSortedByIds = ids.sort((a, b) => {
-            return +a - +b > 0 ? 1 : -1;
+
+            //15.12.2025
+            const dateA = new Date().setFullYear(+flats[a].acf.block.d.split('.')[2], +flats[a].acf.block.d.split('.')[1] - 1, +flats[a].acf.block.d.split('.')[0]);
+            const dateB = new Date().setFullYear(+flats[b].acf.block.d.split('.')[2], +flats[b].acf.block.d.split('.')[1] - 1, +flats[b].acf.block.d.split('.')[0]);
+            return (dateB - dateA > 0) ? 1 : -1;
+
+            return +a - +b > 0 ? -1 : 1;
         });
         paginationData = preparePgination(idsSortedByIds).portionedFlats;
         totalPages = preparePgination(idsSortedByIds).totalPages;
@@ -228,7 +234,7 @@ async function planningsGallery() {
 
 async function getFlats() {
     const isDev =  window.location.href.match(/localhost|verstka|192/);
-    let url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=3&_embed=1&per_page=100';
+    let url = isDev ? './static/flats.json' : '/wp-json/wp/v2/posts?categories=3&_embed=1&per_page=100&order=desc';
     if (document.documentElement.dataset.news_api_url) {
         url = document.documentElement.dataset.news_api_url;
     }
