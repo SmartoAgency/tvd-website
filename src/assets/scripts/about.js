@@ -346,6 +346,7 @@ sportSectionAnimation();
 
 function aboutBlock9Slider() {
     const slider = new Swiper('[data-about-sport-awards-slider]', {
+        // slidesPerView: 'auto',
         slidesPerView: 'auto',
         modules: [Navigation, FreeMode],
         freeMode: true,
