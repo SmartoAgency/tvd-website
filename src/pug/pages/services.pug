@@ -212,6 +212,21 @@ block content
                   source(srcset=block.img media="(min-width: 601px)")
                   source(srcset=block.imgMobile media="(max-width: 600px)")
                   img(class="services-block__callback-bg" src="#" alt="" loading="lazy")
+  .license-screen
+    +title-decor()
+    .license-screen__content
+      .license-screen__text
+        .text-style-1920-h-1.text-style-768-h-1.text-style-375-h-1.color-black Будівельна ліцензія
+        .text-style-1920-h-2.text-style-768-h-2.text-style-375-h-2.color-black Дає право компанії виконувати певні види будівельних робіт на законних підставах
+        .license-screen__image.hide-on-tablet.hide-on-desktop
+          .license-screen__image-wrapper
+            img(src="./assets/images/services/license-bg.jpg" alt="" srcset="")
+        <a href="#" target='_blank' class="button button--mimas">
+          <span class="text-button-small text-dark">Переглянути ліцензію</span>
+        </a>
+      .license-screen__image.hide-on-mobile
+        .license-screen__image-wrapper
+          img(src="./assets/images/services/license-bg.jpg" alt="" srcset="")
   include ../includes/contact-screen.pug
   include ../includes/form-screen.pug
 block footer
